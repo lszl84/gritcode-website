@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gritcode — Building On Cheap</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "bg":        "#1a1815",
+          "surface":   "#211f1b",
+          "surface-raised": "#282620",
+          "accent":    "#e8816a",
+          "accent-dim": "rgba(232,129,106,0.10)",
+          "accent-soft":"rgba(232,129,106,0.06)",
+          "text":      "#ede8df",
+          "text-muted":"#a09b90",
+          "text-dim":  "#6b6760",
+          "border":    "#2e2b25",
+          "border-light":"#3d3a32",
+          "warn":      "#f4b886",
+          "warn-bg":   "rgba(244,184,134,0.08)",
+        },
+        fontFamily: {
+          sans: ["Inter", "sans-serif"],
+          display: ["Space Grotesk", "sans-serif"],
+          mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "monospace"],
+        },
+      }
+    }
+  }
+</script>
+<style>
+  body {
+    background-color: #1a1815;
+    color: #ede8df;
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .selection::selection {
+    background: rgba(232, 129, 106, 0.20);
+    color: #fff;
+  }
+  pre {
+    overflow-x: auto;
+  }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #3d3a32; border-radius: 3px; }
+</style>
+</head>
+<body class="min-h-screen flex flex-col selection">
+
+  <!-- Header -->
+  <header class="border-b border-border">
+    <div class="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
+      <a href="/" class="font-display font-bold text-accent tracking-tight text-sm">GRITCODE</a>
+      <a href="https://github.com/lszl84/gritcode" target="_blank" rel="noopener" class="text-xs text-text-muted hover:text-accent transition-colors font-display tracking-wide">GITHUB</a>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+
+    <!-- Hero -->
+    <section class="max-w-3xl mx-auto px-6 pt-24 pb-12">
+      <p class="font-display text-[11px] text-accent uppercase tracking-[0.15em] mb-6">Building on cheap</p>
+      <h1 class="font-display text-[42px] md:text-[56px] font-bold text-white leading-[1.05] tracking-tight mb-6">
+        AI coding that doesn't<br/>break the bank.
+      </h1>
+      <p class="text-lg text-text-muted leading-relaxed max-w-xl mb-4">
+        A native desktop chat client that connects directly to DeepSeek. Same quality as the expensive models — at a fraction of the cost. Free tier included, no sign-up needed.
+      </p>
+      <p class="text-sm text-text-muted leading-relaxed max-w-xl mb-10">
+        Built with wxWidgets in C++20. No Electron, no bloat. Opens instantly.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="https://github.com/lszl84/gritcode" target="_blank" rel="noopener" class="bg-accent text-[#1a1815] px-6 h-11 flex items-center gap-2 text-xs font-display font-bold uppercase tracking-wider rounded-xl hover:bg-accent/90 transition-colors shadow-lg shadow-accent/15">
+          View on GitHub
+        </a>
+        <a href="https://github.com/sponsors/lszl84" target="_blank" rel="noopener" class="border border-border-light text-text px-6 h-11 flex items-center gap-2 text-xs font-display font-bold uppercase tracking-wider rounded-xl hover:border-accent/40 hover:text-accent transition-colors">
+          &#9829; Sponsor
+        </a>
+      </div>
+    </section>
+
+    <!-- Why pay more? -->
+    <section class="border-t border-border">
+      <div class="max-w-3xl mx-auto px-6 py-20">
+        <h2 class="font-display text-sm text-white uppercase tracking-wider font-bold mb-3">Why pay more?</h2>
+        <p class="text-sm text-text-muted leading-relaxed mb-10 max-w-lg">
+          Claude and OpenAI charge a premium. DeepSeek delivers the same coding performance for pennies. We connect you directly.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div class="border border-accent/15 rounded-2xl p-6 bg-accent-soft">
+            <p class="font-mono text-[10px] text-accent mb-3">$0.00 / month</p>
+            <h3 class="text-sm text-white font-semibold mb-2">Start for free</h3>
+            <p class="text-sm text-text-muted leading-relaxed">The default model works anonymously. No API key, no credit card, no sign-up. Just open the app and start building.</p>
+          </div>
+          <div class="border border-border rounded-2xl p-6 bg-surface">
+            <p class="font-mono text-[10px] text-accent mb-3">~10&times; cheaper</p>
+            <h3 class="text-sm text-white font-semibold mb-2">DeepSeek-direct pricing</h3>
+            <p class="text-sm text-text-muted leading-relaxed">Bring your own DeepSeek key. A heavy day of coding costs cents. The same workload on Claude costs dollars.</p>
+          </div>
+          <div class="border border-border rounded-2xl p-6 bg-surface">
+            <p class="font-mono text-[10px] text-accent mb-3">No middleman</p>
+            <h3 class="text-sm text-white font-semibold mb-2">You talk to the model</h3>
+            <p class="text-sm text-text-muted leading-relaxed">No platform markup, no subscription tiers, no per-seat licensing. Just your code and the AI.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Runs like it should -->
+    <section class="border-t border-border">
+      <div class="max-w-3xl mx-auto px-6 py-20">
+        <h2 class="font-display text-sm text-white uppercase tracking-wider font-bold mb-3">Runs like it should</h2>
+        <p class="text-sm text-text-muted leading-relaxed mb-10 max-w-lg">
+          A single native binary. No Electron, no Chromium, no JavaScript runtime. Opens before you finish blinking.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="flex items-start gap-4 border border-border p-5 rounded-2xl bg-surface">
+            <span class="text-accent font-mono text-xs mt-0.5">01</span>
+            <div>
+              <p class="text-sm text-white font-medium">Zero idle tax</p>
+              <p class="text-sm text-text-muted">Event-driven architecture. When you're not typing, Gritcode uses no CPU at all.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 border border-border p-5 rounded-2xl bg-surface">
+            <span class="text-accent font-mono text-xs mt-0.5">02</span>
+            <div>
+              <p class="text-sm text-white font-medium">Everywhere you work</p>
+              <p class="text-sm text-text-muted">Linux, macOS, Windows. Same CMake build, same experience.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 border border-border p-5 rounded-2xl bg-surface">
+            <span class="text-accent font-mono text-xs mt-0.5">03</span>
+            <div>
+              <p class="text-sm text-white font-medium">Feels at home</p>
+              <p class="text-sm text-text-muted">Native OS widgets. Automatically follows your system dark/light theme.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 border border-border p-5 rounded-2xl bg-surface">
+            <span class="text-accent font-mono text-xs mt-0.5">04</span>
+            <div>
+              <p class="text-sm text-white font-medium">Tiny footprint</p>
+              <p class="text-sm text-text-muted">A few megabytes. VS Code ships 300 MB, Cursor 400 MB. You do the math.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="border-t border-border">
+      <div class="max-w-3xl mx-auto px-6 py-20">
+        <h2 class="font-display text-sm text-white uppercase tracking-wider font-bold mb-10">Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+          <div>
+            <h3 class="text-sm text-white font-semibold mb-1">Streaming markdown</h3>
+            <p class="text-sm text-text-muted leading-relaxed">Headings, code blocks, bold, italic, inline code — rendered live as the model responds.</p>
+          </div>
+          <div>
+            <h3 class="text-sm text-white font-semibold mb-1">Efficient rendering</h3>
+            <p class="text-sm text-text-muted leading-relaxed">Blocks finalize at boundaries. No per-token repaint. Just a subtle thinking-dots animation while generating.</p>
+          </div>
+          <div>
+            <h3 class="text-sm text-white font-semibold mb-1">Select &amp; copy anything</h3>
+            <p class="text-sm text-text-muted leading-relaxed">Character-precise selection across blocks. Copy code snippets or whole conversations.</p>
+          </div>
+          <div>
+            <h3 class="text-sm text-white font-semibold mb-1">System theme aware</h3>
+            <p class="text-sm text-text-muted leading-relaxed">Tracks your dark/light preference automatically. No config needed.</p>
+          </div>
+          <div>
+            <h3 class="text-sm text-white font-semibold mb-1">No API key needed</h3>
+            <p class="text-sm text-text-muted leading-relaxed">Default model works anonymously. Bring your own DeepSeek key when you want more.</p>
+          </div>
+          <div>
+            <h3 class="text-sm text-white font-semibold mb-1">Battery friendly</h3>
+            <p class="text-sm text-text-muted leading-relaxed">Update-region painting — only the newly exposed area repaints on scroll. Minimal GPU work.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Installation -->
+    <section class="border-t border-border">
+      <div class="max-w-3xl mx-auto px-6 py-20">
+        <h2 class="font-display text-sm text-white uppercase tracking-wider font-bold mb-10">Get started</h2>
+
+        <!-- Safety note -->
+        <div class="border border-warn/20 bg-warn-bg rounded-xl p-5 mb-8">
+          <p class="text-xs text-warn/90 leading-relaxed">
+            <strong class="text-warn">No permission system.</strong> AI agents can execute commands on your machine. Press <kbd class="font-mono text-[10px] bg-black/30 px-1.5 py-0.5 rounded border border-warn/20">Escape</kbd> to cancel a running request at any time.
+          </p>
+        </div>
+
+        <!-- Pre-alpha -->
+        <div class="border border-border rounded-xl p-5 mb-10 bg-surface">
+          <p class="text-xs text-text-muted leading-relaxed">
+            <strong class="text-white">Early days.</strong> This is a live project under active development. Things change fast and bugs happen. If you hit one, open an issue — ideally with an AI agent's analysis attached.
+          </p>
+        </div>
+
+        <div class="mb-10">
+          <p class="text-xs text-text-dim uppercase tracking-wider font-display mb-3">Arch / Manjaro</p>
+          <pre class="bg-surface rounded-xl border border-border p-5 text-xs font-mono text-text-muted leading-relaxed"><code>sudo pacman -S --needed base-devel cmake ninja git curl gtk3 pkgconf wxwidgets-gtk3
+
+git clone https://github.com/lszl84/gritcode.git
+cd gritcode
+cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+cmake --install build --prefix ~/.local
+
+grit</code></pre>
+        </div>
+
+        <div class="mb-10">
+          <p class="text-xs text-text-dim uppercase tracking-wider font-display mb-3">Debian / Ubuntu</p>
+          <pre class="bg-surface rounded-xl border border-border p-5 text-xs font-mono text-text-muted leading-relaxed"><code>sudo apt install build-essential cmake ninja-build git pkg-config \
+  libcurl4-openssl-dev libgtk-3-dev libwxgtk3.2-dev
+
+git clone https://github.com/lszl84/gritcode.git
+cd gritcode
+cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+cmake --install build --prefix ~/.local
+
+grit</code></pre>
+        </div>
+
+        <div class="mb-10">
+          <p class="text-xs text-text-dim uppercase tracking-wider font-display mb-3">Fedora</p>
+          <pre class="bg-surface rounded-xl border border-border p-5 text-xs font-mono text-text-muted leading-relaxed"><code>sudo dnf install gcc-c++ cmake ninja-build git libcurl-devel gtk3-devel wxGTK-devel
+
+git clone https://github.com/lszl84/gritcode.git
+cd gritcode
+cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+cmake --install build --prefix ~/.local
+
+grit</code></pre>
+        </div>
+
+        <div class="mb-10">
+          <p class="text-xs text-text-dim uppercase tracking-wider font-display mb-3">macOS</p>
+          <pre class="bg-surface rounded-xl border border-border p-5 text-xs font-mono text-text-muted leading-relaxed"><code>brew install cmake ninja curl
+
+git clone https://github.com/lszl84/gritcode.git
+cd gritcode
+cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+
+open build/grit.app</code></pre>
+        </div>
+
+        <div>
+          <p class="text-xs text-text-dim uppercase tracking-wider font-display mb-3">Windows</p>
+          <pre class="bg-surface rounded-xl border border-border p-5 text-xs font-mono text-text-muted leading-relaxed"><code># Requires Visual Studio 2022 with "Desktop development with C++",
+# Git for Windows, and Ninja on PATH.
+
+git clone https://github.com/lszl84/gritcode.git
+cd gritcode
+cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+cmake --build build
+cmake --install build --prefix %LOCALAPPDATA%\Programs\gritcode
+
+grit</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sponsoring -->
+    <section class="border-t border-border">
+      <div class="max-w-3xl mx-auto px-6 py-20">
+        <h2 class="font-display text-sm text-white uppercase tracking-wider font-bold mb-4">Support the project</h2>
+        <p class="text-sm text-text-muted leading-relaxed max-w-xl mb-6">
+          Built by one person with help from AI agents. No VC backing. Sponsor development to help grow the project — more providers, tool use, session history, cross-project memory.
+        </p>
+        <a href="https://github.com/sponsors/lszl84" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-accent-dim border border-accent/25 text-accent px-6 h-11 text-xs font-display font-bold uppercase tracking-wider rounded-xl hover:bg-accent/15 transition-colors">
+          &#9829; Become a GitHub Sponsor
+        </a>
+      </div>
+    </section>
+
+    <!-- Contributing -->
+    <section class="border-t border-border">
+      <div class="max-w-3xl mx-auto px-6 py-20">
+        <h2 class="font-display text-sm text-white uppercase tracking-wider font-bold mb-4">Contributing</h2>
+        <p class="text-sm text-text-muted leading-relaxed max-w-xl mb-4">
+          This is all vibe coded. Not a single line was typed by hand. Every feature, every fix, every refactor — all driven through AI agents.
+        </p>
+        <p class="text-sm text-text-muted leading-relaxed max-w-xl">
+          Pull requests aren't accepted for now. Found a bug or have a suggestion? Open an issue — even better, run your own AI agent to analyze the problem and include its findings in the report.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-border">
+    <div class="max-w-3xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+      <div class="text-[11px] text-text-dim">
+        Built by <a href="https://devmindscape.com" target="_blank" rel="noopener" class="hover:text-accent transition-colors">DevMindscape</a>. Licensed under <a href="https://github.com/lszl84/gritcode/blob/main/LICENSE" target="_blank" rel="noopener" class="hover:text-accent transition-colors">GPL v3</a>.
+      </div>
+      <div class="flex gap-6 text-[11px] text-text-dim">
+        <a href="https://github.com/lszl84/gritcode" target="_blank" rel="noopener" class="hover:text-accent transition-colors">GitHub</a>
+        <a href="https://github.com/sponsors/lszl84" target="_blank" rel="noopener" class="hover:text-accent transition-colors">Sponsor</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
