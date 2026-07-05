@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gritcode.ai/sitemap.xml
