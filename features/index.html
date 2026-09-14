@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gritcode Features — AI Coding Agent with Editor, Play &amp; Memory</title>
+<meta name="description" content="Everything in Gritcode: agent tools, one-click Play, a built-in editor, session replay, cross-project memory, cheap long sessions, DeepSeek V4 and a free tier.">
+<link rel="canonical" href="https://gritcode.ai/features/">
+<meta name="theme-color" content="#0a0b0d">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Gritcode">
+<meta property="og:title" content="Gritcode features — a complete native agent harness">
+<meta property="og:description" content="Agent tools, one-click Play, built-in editor, session replay, cross-project memory and cheap long sessions, in a 10 MB native app.">
+<meta property="og:url" content="https://gritcode.ai/features/">
+<meta property="og:image" content="https://gritcode.ai/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gritcode.ai/assets/og.png">
+<link rel="stylesheet" href="../assets/site.css?v=2">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Gritcode","item":"https://gritcode.ai/"},
+  {"@type":"ListItem","position":2,"name":"Features","item":"https://gritcode.ai/features/"}]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"VideoObject","name":"Reviewing agent-written code in Gritcode's built-in editor","description":"Gritcode's chat, file tree and tree-sitter editor side by side while reviewing a budgeting app the agent wrote.","thumbnailUrl":"https://gritcode.ai/media/code-review.webp","contentUrl":"https://gritcode.ai/media/code-review.mp4","uploadDate":"2026-09-14","duration":"PT10S"}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../" aria-label="Gritcode home"><img src="../assets/favicon.svg" alt="" width="28" height="28"><span>Gritcode</span></a>
+    <nav class="links" aria-label="Main">
+      <a href="../features/" aria-current="page">Features</a>
+      <a href="../compare/">Compare</a>
+      <a href="../deepseek/">DeepSeek</a>
+      <a href="../linux/">Linux</a>
+      <a href="https://github.com/lszl84/gritcode" rel="noopener">GitHub</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-sponsor btn-sm" href="../sponsor/"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.5 2.3 4.5 6.2 4.5c2.2 0 3.8 1.2 5.8 3.4 2-2.2 3.6-3.4 5.8-3.4 3.9 0 5.8 4 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg>Sponsor</a>
+      <a class="btn btn-primary btn-sm" href="../#download">Download</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="../">Gritcode</a> / Features</div>
+    <h1>Every feature of the Gritcode AI coding agent</h1>
+    <p class="lead">Gritcode is a complete <a href="../agent-harness/">coding agent harness</a>: an agent loop with real tools, an editor, a runner, persistent memory and careful context management, in a native app of about 10&nbsp;MB.</p>
+  </div>
+</section>
+
+<section class="section tight" style="border-top:0">
+  <div class="wrap">
+    <figure>
+      <div class="shot">
+        <video data-autoplay muted loop playsinline preload="none" poster="../media/code-review.webp" width="1600" height="900" aria-label="Gritcode with chat on the left and the built-in editor and file tree on the right">
+          <source src="../media/code-review.mp4" type="video/mp4">
+        </video>
+      </div>
+      <figcaption>Chat, file tree and editor side by side: Gritcode on macOS.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap prose">
+    <h2 id="agent">The agent</h2>
+    <p>Gritcode runs a full agentic loop. The model plans, calls a tool, reads the result and keeps going until the job is done, and you can watch every step.</p>
+    <ul>
+      <li><strong>Shell:</strong> runs <code>bash</code> commands in your project folder, with your login shell's environment and PATH.</li>
+      <li><strong>Files:</strong> reads, writes and edits files with exact string replacement, and lists directories.</li>
+      <li><strong>Search:</strong> uses grep across your codebase, web search, and fetches URLs for docs and examples.</li>
+      <li><strong>Vision:</strong> drop screenshots into the message box and they're routed to a DeepSeek vision model.</li>
+      <li><strong>Transparent:</strong> collapsible tool-call cards and thinking blocks, and you can cancel a turn at any time.</li>
+      <li><strong>Streaming markdown:</strong> headings, tables, code blocks and inline formatting render live on a custom native canvas.</li>
+    </ul>
+
+    <h2 id="run">Build and run: the ▶ Play button</h2>
+    <p>Once the agent has your project working, it saves the run command for that folder. Press <strong>▶ Play</strong> and Gritcode runs it directly, with no model call and no tokens. Output and errors are shown in the chat, so if something breaks you just say "fix it".</p>
+    <p>It works with any language or build system: <code>python main.py</code>, <code>cmake --build</code>, <code>npm run dev</code>, <code>cargo run</code>, or anything else your shell can run.</p>
+
+    <h2 id="editor">Built-in code editor</h2>
+    <p>In the agentic era you type less and review more. The heavyweight IDEs of the past are fading, but you still need to see the code and the project outline and make small fixes. Gritcode keeps exactly that and cuts out the fluff.</p>
+    <ul>
+      <li>File tree with New File, New Folder, Rename and Show in Finder or Files</li>
+      <li>Tree-sitter syntax highlighting and smart indentation</li>
+      <li>Dirty tracking, save, and unsaved-changes protection</li>
+      <li>Draggable split between chat and editor; the panel collapses when you don't need it</li>
+    </ul>
+
+    <h2 id="sessions">Sessions, export and replay</h2>
+    <p>Each project folder has its own session, saved automatically in SQLite and restored when you come back. Switch between projects from the Session menu.</p>
+    <ul>
+      <li><strong>Export</strong> a whole session, images included, to one <code>.gritsession</code> file.</li>
+      <li><strong>Load</strong> a session as a reference pane beside your current one.</li>
+      <li><strong>Replay:</strong> click any prompt in the reference to copy it into the live session. Rebuild a project step by step, or share a working recipe with a teammate.</li>
+    </ul>
+
+    <h2 id="memory">Cross-project memory</h2>
+    <p>Every conversation is indexed with SQLite FTS5 full-text search. Gritcode gives the agent two tools, <code>grit_history_search</code> and <code>grit_history_fetch</code>, so it can find how you solved something last month in another repo and bring just that context into the current task. You can turn the history tools off in Settings.</p>
+
+    <h2 id="context">Context management that keeps costs down</h2>
+    <p>Long agent sessions get expensive when a harness re-sends too much. Gritcode sends the model only what it needs:</p>
+    <ul>
+      <li>Compaction starts only as the conversation nears the model's context window</li>
+      <li>A token-budgeted tail of recent turns is kept word for word</li>
+      <li>Summaries are chained, so earlier summaries are merged in rather than lost</li>
+      <li>Reasoning tokens are stripped from outgoing requests, and oversized tool arguments are truncated</li>
+      <li>If the context overflows, Gritcode compacts and retries once automatically, and your full history stays intact on disk</li>
+    </ul>
+
+    <h2 id="models">Models</h2>
+    <ul>
+      <li><strong>OpenCode Free:</strong> no API key and no sign-up. It's the default for new users.</li>
+      <li><strong>DeepSeek V4 Pro and V4.1 Flash:</strong> use your own key and pay DeepSeek directly.</li>
+      <li>The model list is fetched live from DeepSeek, so new models show up without an update.</li>
+    </ul>
+    <p><a href="../deepseek/">Gritcode as a DeepSeek desktop app →</a></p>
+
+    <h2 id="native">A native app</h2>
+    <ul>
+      <li>C++20 and wxWidgets, with no Electron, Chromium or JavaScript runtime</li>
+      <li>About 10&nbsp;MB on disk and under 60&nbsp;MB of RAM at rest; event-driven, so it's idle when you are</li>
+      <li>On macOS: the Tahoe look, with a transparent titlebar, SF Mono, overlay scrollbars and a self-contained .app with no Homebrew dependencies</li>
+      <li>On Linux: native GTK widgets and a small .deb (<a href="../linux/">Linux guide</a>)</li>
+      <li>Follows your system's dark or light theme</li>
+    </ul>
+
+    <h2 id="privacy">Privacy and security</h2>
+    <ul>
+      <li>API keys are stored in the macOS Keychain or the Linux Secret Service</li>
+      <li>Sessions, memory and images stay on your disk</li>
+      <li>Your code goes only to the model provider you choose</li>
+      <li>Open source under GPLv3, so you can audit everything</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Try it in under a minute.</h2>
+        <p>3.5&nbsp;MB download. The free tier needs no account.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="../#download">Download Gritcode</a>
+        <a class="btn btn-sponsor" href="../sponsor/">♥ Sponsor</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="../"><img src="../assets/favicon.svg" alt="" width="28" height="28"><span>Gritcode</span></a>
+        <p>Gritcode is a native, open-source AI coding agent and agent harness for DeepSeek V4, for macOS and Linux.</p>
+        <div class="cta-row">
+          <a class="btn btn-sponsor btn-sm" href="https://github.com/sponsors/lszl84" rel="noopener">♥ GitHub Sponsors</a>
+          <a class="btn btn-ghost btn-sm" href="https://patreon.com/LukeDevMindscape" rel="noopener">Patreon</a>
+        </div>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="../features/">Features</a></li>
+          <li><a href="../#download">Download</a></li>
+          <li><a href="../deepseek/">DeepSeek desktop app</a></li>
+          <li><a href="../linux/">Gritcode for Linux</a></li>
+          <li><a href="https://github.com/lszl84/gritcode/releases" rel="noopener">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Compare</h4>
+        <ul>
+          <li><a href="../compare/claude-code/">vs Claude Code</a></li>
+          <li><a href="../compare/cursor/">vs Cursor</a></li>
+          <li><a href="../compare/opencode/">vs OpenCode</a></li>
+          <li><a href="../compare/deepseek-harness/">vs DeepSeek Harness</a></li>
+          <li><a href="../compare/">All comparisons</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Guides</h4>
+        <ul>
+          <li><a href="../claude-code-deepseek/">Claude Code with DeepSeek</a></li>
+          <li><a href="../agent-harness/">What is an agent harness?</a></li>
+          <li><a href="../deepseek/#setup">Set up DeepSeek</a></li>
+          <li><a href="../linux/#install">Install on Linux</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://github.com/lszl84/gritcode" rel="noopener">GitHub</a></li>
+          <li><a href="https://github.com/lszl84/gritcode/issues" rel="noopener">Report an issue</a></li>
+          <li><a href="https://youtube.com/@devmindscapetutorials" rel="noopener">YouTube</a></li>
+          <li><a href="../sponsor/">Sponsor</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fine">
+      <span>© 2026 Luke · <a href="https://devmindscape.com" rel="noopener">DevMindscape</a> · Licensed under <a href="https://github.com/lszl84/gritcode/blob/main/LICENSE" rel="noopener">GPLv3</a></span>
+      <span>DeepSeek, Claude, Cursor and OpenCode are trademarks of their respective owners.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="thanks" role="status" hidden>
+  <button class="x" type="button" aria-label="Close">×</button>
+  <p><b>Thanks for downloading Gritcode!</b> It's free and built by one developer. If it saves you time, please consider sponsoring.</p>
+  <div class="cta-row">
+    <a class="btn btn-sponsor btn-sm" href="https://github.com/sponsors/lszl84" rel="noopener">♥ GitHub Sponsors</a>
+    <a class="btn btn-patreon btn-sm" href="https://patreon.com/LukeDevMindscape" rel="noopener">Patreon</a>
+  </div>
+</div><script src="../assets/site.js?v=3" defer></script>
+</body>
+</html>

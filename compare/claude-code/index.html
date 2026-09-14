@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gritcode vs Claude Code — Open-Source Claude Code Alternative</title>
+<meta name="description" content="A free, open-source Claude Code alternative: Gritcode is a native GUI coding agent for DeepSeek V4. 10.5 MB, 58 MB RAM, no subscription. An honest comparison.">
+<link rel="canonical" href="https://gritcode.ai/compare/claude-code/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gritcode vs Claude Code">
+<meta property="og:description" content="An open-source, GUI-first Claude Code alternative running DeepSeek V4. Honest comparison.">
+<meta property="og:url" content="https://gritcode.ai/compare/claude-code/">
+<meta name="theme-color" content="#0a0b0d">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<meta property="og:site_name" content="Gritcode">
+<meta property="og:image" content="https://gritcode.ai/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gritcode.ai/assets/og.png">
+<link rel="stylesheet" href="../../assets/site.css?v=2">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Gritcode","item":"https://gritcode.ai/"},
+  {"@type":"ListItem","position":2,"name":"Compare","item":"https://gritcode.ai/compare/"},
+  {"@type":"ListItem","position":3,"name":"Gritcode vs Claude Code","item":"https://gritcode.ai/compare/claude-code/"}]},
+ {"@type":"Article","headline":"Gritcode vs Claude Code","datePublished":"2026-09-14","dateModified":"2026-09-14",
+  "author":{"@type":"Person","name":"Luke","url":"https://devmindscape.com"},"image":"https://gritcode.ai/assets/og.png","mainEntityOfPage":"https://gritcode.ai/compare/claude-code/"},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Is Gritcode a free Claude Code alternative?","acceptedAnswer":{"@type":"Answer","text":"Yes. Gritcode is free and open source under GPLv3. Its default OpenCode Free model needs no API key; with your own DeepSeek key you pay DeepSeek per token and nothing to Gritcode."}},
+  {"@type":"Question","name":"Does Gritcode use Claude models?","acceptedAnswer":{"@type":"Answer","text":"No. Gritcode runs DeepSeek V4 Pro and V4.1 Flash, plus a free OpenCode Zen model. If you specifically want Claude models, use Claude Code."}},
+  {"@type":"Question","name":"Can Claude Code run on DeepSeek instead?","acceptedAnswer":{"@type":"Answer","text":"Yes. DeepSeek offers an Anthropic-compatible API, and Claude Code can be pointed at it with a few environment variables."}},
+  {"@type":"Question","name":"Can I use Gritcode and Claude Code together?","acceptedAnswer":{"@type":"Answer","text":"Yes. They work on ordinary project folders, so you can use Claude Code for some tasks and Gritcode for others in the same repository."}}
+ ]}
+]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../../" aria-label="Gritcode home"><img src="../../assets/favicon.svg" alt="" width="28" height="28"><span>Gritcode</span></a>
+    <nav class="links" aria-label="Main">
+      <a href="../../features/">Features</a>
+      <a href="../../compare/" aria-current="page">Compare</a>
+      <a href="../../deepseek/">DeepSeek</a>
+      <a href="../../linux/">Linux</a>
+      <a href="https://github.com/lszl84/gritcode" rel="noopener">GitHub</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-sponsor btn-sm" href="../../sponsor/"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.5 2.3 4.5 6.2 4.5c2.2 0 3.8 1.2 5.8 3.4 2-2.2 3.6-3.4 5.8-3.4 3.9 0 5.8 4 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg>Sponsor</a>
+      <a class="btn btn-primary btn-sm" href="../../#download">Download</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="../../">Gritcode</a> / <a href="../../compare/">Compare</a> / Claude Code</div>
+    <span class="eyebrow">Claude Code alternative</span>
+    <h1>Gritcode vs Claude Code</h1>
+    <p class="lead">Claude Code is Anthropic's agentic coding tool and one of the best harnesses available. Gritcode is a <strong>free, open-source, native GUI alternative</strong> built for DeepSeek V4. Here's where each one wins.</p>
+  </div>
+</section>
+
+<section class="section tight" style="border-top:0">
+  <div class="wrap">
+    <h2 class="sr-only">Quick verdict</h2>
+    <div class="verdicts">
+      <div class="card">
+        <h3>Choose Claude Code if…</h3>
+        <p>you want Anthropic's Claude models specifically, rely on its ecosystem of MCP servers, hooks, skills and subagents, or your company already pays for Claude.</p>
+      </div>
+      <div class="card hl">
+        <h3>Choose Gritcode if…</h3>
+        <p>you want an agent that's cheap to run all day on DeepSeek V4, prefer a real GUI with an editor and a ▶&nbsp;Play button, and value open source with no account.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap prose">
+    <h2>At a glance</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col"></th><th scope="col" class="me">Gritcode</th><th scope="col">Claude Code</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Made by</th><td class="me">Luke, an independent developer</td><td>Anthropic</td></tr>
+          <tr><th scope="row">Interface</th><td class="me">Native desktop app (macOS, Linux)</td><td>Terminal, IDE extensions, Claude desktop app</td></tr>
+          <tr><th scope="row">Models</th><td class="me">DeepSeek V4 Pro, V4.1 Flash, free OpenCode Zen model</td><td>Claude models (can be pointed at DeepSeek)</td></tr>
+          <tr><th scope="row">Pricing</th><td class="me">Free app; pay DeepSeek per token, or $0 on the free tier</td><td>Claude subscription or API usage</td></tr>
+          <tr><th scope="row">Open source</th><td class="me">Yes, GPLv3</td><td>No</td></tr>
+          <tr><th scope="row">App size (macOS)</th><td class="me">10.5 MB</td><td>892 MB (Claude desktop app)</td></tr>
+          <tr><th scope="row">RAM at rest</th><td class="me">58 MB</td><td>1.8 GB (Claude desktop app)</td></tr>
+          <tr><th scope="row">Account</th><td class="me">None needed</td><td>Anthropic account</td></tr>
+          <tr><th scope="row">Editor</th><td class="me">File tree and syntax-highlighted editor beside the chat</td><td>Editor in the desktop app; the CLI works alongside your IDE</td></tr>
+          <tr><th scope="row">Run your app</th><td class="me">▶ Play, no tokens used</td><td>Via agent commands</td></tr>
+          <tr><th scope="row">Extensibility</th><td class="me">A focused, built-in toolset</td><td>MCP servers, hooks, skills, subagents</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Where Claude Code is better</h2>
+    <ul>
+      <li><strong>The models.</strong> Claude models are among the strongest coding models available, and Claude Code is tuned for them.</li>
+      <li><strong>The ecosystem.</strong> MCP servers, hooks, skills, subagents and IDE integrations make it very extensible.</li>
+      <li><strong>Teams and enterprise.</strong> Admin controls, support and a large community.</li>
+    </ul>
+
+    <h2>Where Gritcode is better</h2>
+    <ul>
+      <li><strong>Running cost.</strong> DeepSeek V4 costs far less per token, and Gritcode's context management is tuned to keep long sessions cheap. There's also a free tier with no key.</li>
+      <li><strong>A native GUI.</strong> Rendered markdown, collapsible tool cards, a file tree, an editor and a ▶&nbsp;Play button that runs your project without spending tokens.</li>
+      <li><strong>Footprint.</strong> The app is 10.5&nbsp;MB, compared with 892&nbsp;MB for the Claude desktop app, and it idles at 58&nbsp;MB of RAM against about 1.8&nbsp;GB for the Claude app.</li>
+      <li><strong>Openness.</strong> It's GPLv3 and needs no account. You can read exactly what it sends to the model.</li>
+      <li><strong>Session replay.</strong> Export a session to a <code>.gritsession</code> file and replay its prompts in a new project.</li>
+    </ul>
+
+    <h2>Can Claude Code run on DeepSeek?</h2>
+    <p>Yes. DeepSeek offers an Anthropic-compatible API, and Claude Code can use it through a handful of environment variables. We wrote a full <a href="../../claude-code-deepseek/">guide to running Claude Code with DeepSeek V4</a>. Keep in mind that Claude Code is built for Claude. If DeepSeek is your main model, a harness designed around it may serve you better.</p>
+
+    <h2>FAQ</h2>
+    <h3>Is Gritcode a free Claude Code alternative?</h3>
+    <p>Yes. Gritcode is free and open source under GPLv3. Its default OpenCode Free model needs no API key; with your own DeepSeek key you pay DeepSeek per token and nothing to Gritcode.</p>
+    <h3>Does Gritcode use Claude models?</h3>
+    <p>No. Gritcode runs DeepSeek V4 Pro and V4.1 Flash, plus a free OpenCode Zen model. If you specifically want Claude models, use Claude Code.</p>
+    <h3>Can Claude Code run on DeepSeek instead?</h3>
+    <p>Yes. DeepSeek offers an Anthropic-compatible API, and Claude Code can be pointed at it with a few environment variables. See <a href="../../claude-code-deepseek/">the setup guide</a>.</p>
+    <h3>Can I use Gritcode and Claude Code together?</h3>
+    <p>Yes. They work on ordinary project folders, so you can use Claude Code for some tasks and Gritcode for others in the same repository.</p>
+    <p class="table-note">Measured on an Apple Silicon Mac on 14 Sep 2026. RAM is the macOS memory footprint summed over the app's processes: both idle after a fresh launch (Claude desktop app: 13 processes). Product details change often, so check Anthropic's site for current plans.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Try the Claude Code alternative.</h2>
+        <p>Free, open source, 3.5&nbsp;MB. No account needed.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="../../#download">Download Gritcode</a>
+        <a class="btn btn-ghost" href="../../compare/">All comparisons</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="../../"><img src="../../assets/favicon.svg" alt="" width="28" height="28"><span>Gritcode</span></a>
+        <p>Gritcode is a native, open-source AI coding agent and agent harness for DeepSeek V4, for macOS and Linux.</p>
+        <div class="cta-row">
+          <a class="btn btn-sponsor btn-sm" href="https://github.com/sponsors/lszl84" rel="noopener">♥ GitHub Sponsors</a>
+          <a class="btn btn-ghost btn-sm" href="https://patreon.com/LukeDevMindscape" rel="noopener">Patreon</a>
+        </div>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="../../features/">Features</a></li>
+          <li><a href="../../#download">Download</a></li>
+          <li><a href="../../deepseek/">DeepSeek desktop app</a></li>
+          <li><a href="../../linux/">Gritcode for Linux</a></li>
+          <li><a href="https://github.com/lszl84/gritcode/releases" rel="noopener">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Compare</h4>
+        <ul>
+          <li><a href="../../compare/claude-code/">vs Claude Code</a></li>
+          <li><a href="../../compare/cursor/">vs Cursor</a></li>
+          <li><a href="../../compare/opencode/">vs OpenCode</a></li>
+          <li><a href="../../compare/deepseek-harness/">vs DeepSeek Harness</a></li>
+          <li><a href="../../compare/">All comparisons</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Guides</h4>
+        <ul>
+          <li><a href="../../claude-code-deepseek/">Claude Code with DeepSeek</a></li>
+          <li><a href="../../agent-harness/">What is an agent harness?</a></li>
+          <li><a href="../../deepseek/#setup">Set up DeepSeek</a></li>
+          <li><a href="../../linux/#install">Install on Linux</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://github.com/lszl84/gritcode" rel="noopener">GitHub</a></li>
+          <li><a href="https://github.com/lszl84/gritcode/issues" rel="noopener">Report an issue</a></li>
+          <li><a href="https://youtube.com/@devmindscapetutorials" rel="noopener">YouTube</a></li>
+          <li><a href="../../sponsor/">Sponsor</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fine">
+      <span>© 2026 Luke · <a href="https://devmindscape.com" rel="noopener">DevMindscape</a> · Licensed under <a href="https://github.com/lszl84/gritcode/blob/main/LICENSE" rel="noopener">GPLv3</a></span>
+      <span>DeepSeek, Claude, Cursor and OpenCode are trademarks of their respective owners.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="thanks" role="status" hidden>
+  <button class="x" type="button" aria-label="Close">×</button>
+  <p><b>Thanks for downloading Gritcode!</b> It's free and built by one developer. If it saves you time, please consider sponsoring.</p>
+  <div class="cta-row">
+    <a class="btn btn-sponsor btn-sm" href="https://github.com/sponsors/lszl84" rel="noopener">♥ GitHub Sponsors</a>
+    <a class="btn btn-patreon btn-sm" href="https://patreon.com/LukeDevMindscape" rel="noopener">Patreon</a>
+  </div>
+</div>
+<script src="../../assets/site.js?v=3" defer></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude Code with DeepSeek V4: Setup Guide (2026) — Gritcode</title>
+<meta name="description" content="Run Claude Code on DeepSeek V4 with DeepSeek's Anthropic-compatible API: install, environment variables, model choice, caveats, and a no-setup alternative.">
+<link rel="canonical" href="https://gritcode.ai/claude-code-deepseek/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to use Claude Code with DeepSeek V4">
+<meta property="og:description" content="Step-by-step setup using DeepSeek's Anthropic-compatible API, plus caveats and a simpler alternative.">
+<meta property="og:url" content="https://gritcode.ai/claude-code-deepseek/">
+<meta name="theme-color" content="#0a0b0d">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta property="og:site_name" content="Gritcode">
+<meta property="og:image" content="https://gritcode.ai/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gritcode.ai/assets/og.png">
+<link rel="stylesheet" href="../assets/site.css?v=2">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Gritcode","item":"https://gritcode.ai/"},
+  {"@type":"ListItem","position":2,"name":"Claude Code with DeepSeek","item":"https://gritcode.ai/claude-code-deepseek/"}]},
+ {"@type":"TechArticle","headline":"How to use Claude Code with DeepSeek V4","datePublished":"2026-09-14","dateModified":"2026-09-14",
+  "author":{"@type":"Person","name":"Luke","url":"https://devmindscape.com"},"image":"https://gritcode.ai/assets/og.png",
+  "mainEntityOfPage":"https://gritcode.ai/claude-code-deepseek/","proficiencyLevel":"Beginner"},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Can Claude Code use DeepSeek models?","acceptedAnswer":{"@type":"Answer","text":"Yes. DeepSeek provides an Anthropic-compatible endpoint at https://api.deepseek.com/anthropic. Point ANTHROPIC_BASE_URL at it, use your DeepSeek API key as ANTHROPIC_AUTH_TOKEN, and set the model variables to DeepSeek model IDs."}},
+  {"@type":"Question","name":"Which DeepSeek model should I use with Claude Code?","acceptedAnswer":{"@type":"Answer","text":"DeepSeek's example configuration uses deepseek-flash for everything, which is the cheapest option. For harder work, switch the main model to deepseek-v4-pro."}},
+  {"@type":"Question","name":"Is Claude Code with DeepSeek cheaper than with Claude?","acceptedAnswer":{"@type":"Answer","text":"DeepSeek's per-token prices are much lower than Claude's, so the same session usually costs far less. Your actual savings depend on how you use it."}},
+  {"@type":"Question","name":"Is there a GUI alternative to Claude Code for DeepSeek?","acceptedAnswer":{"@type":"Answer","text":"Yes. Gritcode is a free, open-source native desktop coding agent built for DeepSeek V4. You paste your key in Settings, with no environment variables to manage."}}
+ ]}
+]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../" aria-label="Gritcode home"><img src="../assets/favicon.svg" alt="" width="28" height="28"><span>Gritcode</span></a>
+    <nav class="links" aria-label="Main">
+      <a href="../features/">Features</a>
+      <a href="../compare/">Compare</a>
+      <a href="../deepseek/">DeepSeek</a>
+      <a href="../linux/">Linux</a>
+      <a href="https://github.com/lszl84/gritcode" rel="noopener">GitHub</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-sponsor btn-sm" href="../sponsor/"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.5 2.3 4.5 6.2 4.5c2.2 0 3.8 1.2 5.8 3.4 2-2.2 3.6-3.4 5.8-3.4 3.9 0 5.8 4 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg>Sponsor</a>
+      <a class="btn btn-primary btn-sm" href="../#download">Download</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="../">Gritcode</a> / Guides / Claude Code with DeepSeek</div>
+    <span class="eyebrow">Guide</span>
+    <h1>How to use Claude Code with DeepSeek V4</h1>
+    <p class="lead">DeepSeek offers an Anthropic-compatible API, so Claude Code can run on DeepSeek V4 models for a fraction of the token cost. Here's the setup from DeepSeek's documentation, what to watch out for, and a simpler option if you'd rather skip the environment variables.</p>
+    <p class="updated">Updated 14 September 2026</p>
+  </div>
+</section>
+
+<section class="section tight" style="border-top:0">
+  <div class="wrap prose">
+    <p class="note"><strong>Short version:</strong> set <code>ANTHROPIC_BASE_URL</code> to <code>https://api.deepseek.com/anthropic</code>, put your DeepSeek key in <code>ANTHROPIC_AUTH_TOKEN</code>, set the model variables to DeepSeek model IDs, then run <code>claude</code>.</p>
+
+    <h2 id="why">Why run Claude Code on DeepSeek?</h2>
+    <p>Claude Code is one of the most capable agent harnesses around, but agentic sessions use a lot of tokens: every file read, command and retry goes back to the model. DeepSeek V4 is strong at coding, has a context window of roughly a million tokens, and costs far less per token. Pairing the two gives you Claude Code's terminal workflow at DeepSeek prices.</p>
+
+    <h2 id="step-1">Step 1: Get a DeepSeek API key</h2>
+    <p>Sign in at <a href="https://platform.deepseek.com/" rel="noopener">platform.deepseek.com</a>, create an API key and add some credit. Keep the key somewhere safe; you'll paste it in Step 3.</p>
+
+    <h2 id="step-2">Step 2: Install Claude Code</h2>
+    <p>Claude Code needs Node.js 18 or newer (and Git for Windows on Windows).</p>
+<pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
+
+    <h2 id="step-3">Step 3: Point Claude Code at DeepSeek</h2>
+    <p>These are the environment variables from <a href="https://api-docs.deepseek.com/quick_start/agent_integrations/claude_code/" rel="noopener">DeepSeek's Claude Code integration docs</a>. On macOS or Linux:</p>
+<pre><code>export ANTHROPIC_BASE_URL=https://api.deepseek.com/anthropic
+export ANTHROPIC_AUTH_TOKEN=&lt;your DeepSeek API key&gt;
+export ANTHROPIC_MODEL=deepseek-flash[1m]
+export ANTHROPIC_DEFAULT_OPUS_MODEL=deepseek-flash[1m]
+export ANTHROPIC_DEFAULT_SONNET_MODEL=deepseek-flash[1m]
+export ANTHROPIC_DEFAULT_HAIKU_MODEL=deepseek-flash
+export CLAUDE_CODE_SUBAGENT_MODEL=deepseek-flash
+export CLAUDE_CODE_EFFORT_LEVEL=max
+export CLAUDE_CODE_AUTO_COMPACT_WINDOW=786432</code></pre>
+    <h3>Windows (PowerShell)</h3>
+<pre><code>$env:ANTHROPIC_BASE_URL="https://api.deepseek.com/anthropic"
+$env:ANTHROPIC_AUTH_TOKEN="&lt;your DeepSeek API key&gt;"
+$env:ANTHROPIC_MODEL="deepseek-flash[1m]"
+$env:ANTHROPIC_DEFAULT_OPUS_MODEL="deepseek-flash[1m]"
+$env:ANTHROPIC_DEFAULT_SONNET_MODEL="deepseek-flash[1m]"
+$env:ANTHROPIC_DEFAULT_HAIKU_MODEL="deepseek-flash"
+$env:CLAUDE_CODE_SUBAGENT_MODEL="deepseek-flash"
+$env:CLAUDE_CODE_EFFORT_LEVEL="max"
+$env:CLAUDE_CODE_AUTO_COMPACT_WINDOW="786432"</code></pre>
+    <h3>What each variable does</h3>
+    <ul>
+      <li><code>ANTHROPIC_BASE_URL</code> sends Claude Code's requests to DeepSeek instead of Anthropic.</li>
+      <li><code>ANTHROPIC_AUTH_TOKEN</code> is your DeepSeek API key.</li>
+      <li><code>ANTHROPIC_MODEL</code> and the <code>DEFAULT_*_MODEL</code> variables choose which DeepSeek model answers when Claude Code asks for its main, Opus, Sonnet or Haiku model.</li>
+      <li><code>CLAUDE_CODE_SUBAGENT_MODEL</code> is the model used by subagents.</li>
+      <li><code>CLAUDE_CODE_AUTO_COMPACT_WINDOW</code> tells Claude Code when to compact the conversation, sized for DeepSeek's long context.</li>
+    </ul>
+
+    <h2 id="step-4">Step 4: Start Claude Code</h2>
+<pre><code>cd your-project
+claude</code></pre>
+    <p>To avoid retyping the variables, save the <code>export</code> lines in a file such as <code>~/.claude-deepseek.sh</code> and run <code>source ~/.claude-deepseek.sh</code> in any terminal where you want Claude Code on DeepSeek. Keep that file private, because it contains your key.</p>
+
+    <h2 id="models">Choosing V4 Pro or V4.1 Flash</h2>
+    <p>DeepSeek's example uses <code>deepseek-flash</code> (currently DeepSeek V4.1 Flash) everywhere. That's the cheapest setup and fine for most edits. DeepSeek's docs note that Claude Opus model names map to <code>deepseek-v4-pro</code>, and Sonnet and Haiku names map to <code>deepseek-flash</code>. For harder refactors, set <code>ANTHROPIC_MODEL</code> to <code>deepseek-v4-pro[1m]</code>. Model IDs change from time to time, so check DeepSeek's docs for the current list.</p>
+
+    <h2 id="caveats">Caveats</h2>
+    <ul>
+      <li><strong>Claude Code is built for Claude.</strong> Its prompts and tools are tuned for Anthropic's models, so some behaviour may differ on DeepSeek.</li>
+      <li><strong>Web search costs extra.</strong> DeepSeek's docs note that web searches add model token costs for summarising the results.</li>
+      <li><strong>Watch your usage.</strong> Check the DeepSeek console during your first sessions to see what a typical task costs.</li>
+      <li><strong>Your code goes to DeepSeek.</strong> Requests are sent to DeepSeek's API, not Anthropic's.</li>
+    </ul>
+
+    <h2 id="alternative">The no-setup alternative: a harness built for DeepSeek</h2>
+    <p>If you want DeepSeek as a coding agent but don't need Claude Code specifically, <a href="../">Gritcode</a> is built for DeepSeek from the start. You download it, paste your key in Settings (it goes into your OS keyring) and pick a model. There are no environment variables and no Node.js.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col"></th><th scope="col">Claude Code + DeepSeek</th><th scope="col" class="me">Gritcode</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Setup</th><td>npm install plus 9 environment variables</td><td class="me">Download, paste your key</td></tr>
+          <tr><th scope="row">Interface</th><td>Terminal</td><td class="me">Native desktop app with editor and file tree</td></tr>
+          <tr><th scope="row">Built for</th><td>Claude models</td><td class="me">DeepSeek V4, with context management tuned for it</td></tr>
+          <tr><th scope="row">Run your app</th><td>Via agent commands</td><td class="me">▶ Play button, no tokens used</td></tr>
+          <tr><th scope="row">Free option</th><td>No</td><td class="me">Yes, OpenCode Free with no key</td></tr>
+          <tr><th scope="row">Open source</th><td>No</td><td class="me">Yes, GPLv3</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>More detail: <a href="../compare/claude-code/">Gritcode vs Claude Code</a> · <a href="../deepseek/">Gritcode as a DeepSeek desktop app</a></p>
+
+    <h2 id="faq">FAQ</h2>
+    <h3>Can Claude Code use DeepSeek models?</h3>
+    <p>Yes. DeepSeek provides an Anthropic-compatible endpoint at <code>https://api.deepseek.com/anthropic</code>. Point <code>ANTHROPIC_BASE_URL</code> at it, use your DeepSeek API key as <code>ANTHROPIC_AUTH_TOKEN</code>, and set the model variables to DeepSeek model IDs.</p>
+    <h3>Which DeepSeek model should I use with Claude Code?</h3>
+    <p>DeepSeek's example configuration uses <code>deepseek-flash</code> for everything, which is the cheapest option. For harder work, switch the main model to <code>deepseek-v4-pro</code>.</p>
+    <h3>Is Claude Code with DeepSeek cheaper than with Claude?</h3>
+    <p>DeepSeek's per-token prices are much lower than Claude's, so the same session usually costs far less. Your actual savings depend on how you use it.</p>
+    <h3>Is there a GUI alternative to Claude Code for DeepSeek?</h3>
+    <p>Yes. Gritcode is a free, open-source native desktop coding agent built for DeepSeek V4. You paste your key in Settings, with no environment variables to manage.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Skip the setup.</h2>
+        <p>Gritcode: DeepSeek V4 in a native app. Free, open source, 3.5&nbsp;MB.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="../#download">Download Gritcode</a>
+        <a class="btn btn-ghost" href="../deepseek/">DeepSeek setup</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="../"><img src="../assets/favicon.svg" alt="" width="28" height="28"><span>Gritcode</span></a>
+        <p>Gritcode is a native, open-source AI coding agent and agent harness for DeepSeek V4, for macOS and Linux.</p>
+        <div class="cta-row">
+          <a class="btn btn-sponsor btn-sm" href="https://github.com/sponsors/lszl84" rel="noopener">♥ GitHub Sponsors</a>
+          <a class="btn btn-ghost btn-sm" href="https://patreon.com/LukeDevMindscape" rel="noopener">Patreon</a>
+        </div>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="../features/">Features</a></li>
+          <li><a href="../#download">Download</a></li>
+          <li><a href="../deepseek/">DeepSeek desktop app</a></li>
+          <li><a href="../linux/">Gritcode for Linux</a></li>
+          <li><a href="https://github.com/lszl84/gritcode/releases" rel="noopener">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Compare</h4>
+        <ul>
+          <li><a href="../compare/claude-code/">vs Claude Code</a></li>
+          <li><a href="../compare/cursor/">vs Cursor</a></li>
+          <li><a href="../compare/opencode/">vs OpenCode</a></li>
+          <li><a href="../compare/deepseek-harness/">vs DeepSeek Harness</a></li>
+          <li><a href="../compare/">All comparisons</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Guides</h4>
+        <ul>
+          <li><a href="../claude-code-deepseek/">Claude Code with DeepSeek</a></li>
+          <li><a href="../agent-harness/">What is an agent harness?</a></li>
+          <li><a href="../deepseek/#setup">Set up DeepSeek</a></li>
+          <li><a href="../linux/#install">Install on Linux</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://github.com/lszl84/gritcode" rel="noopener">GitHub</a></li>
+          <li><a href="https://github.com/lszl84/gritcode/issues" rel="noopener">Report an issue</a></li>
+          <li><a href="https://youtube.com/@devmindscapetutorials" rel="noopener">YouTube</a></li>
+          <li><a href="../sponsor/">Sponsor</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fine">
+      <span>© 2026 Luke · <a href="https://devmindscape.com" rel="noopener">DevMindscape</a> · Licensed under <a href="https://github.com/lszl84/gritcode/blob/main/LICENSE" rel="noopener">GPLv3</a></span>
+      <span>DeepSeek, Claude, Cursor and OpenCode are trademarks of their respective owners.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="thanks" role="status" hidden>
+  <button class="x" type="button" aria-label="Close">×</button>
+  <p><b>Thanks for downloading Gritcode!</b> It's free and built by one developer. If it saves you time, please consider sponsoring.</p>
+  <div class="cta-row">
+    <a class="btn btn-sponsor btn-sm" href="https://github.com/sponsors/lszl84" rel="noopener">♥ GitHub Sponsors</a>
+    <a class="btn btn-patreon btn-sm" href="https://patreon.com/LukeDevMindscape" rel="noopener">Patreon</a>
+  </div>
+</div>
+<script src="../assets/site.js?v=3" defer></script>
+</body>
+</html>

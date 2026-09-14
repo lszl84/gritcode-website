@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Is an Agent Harness? Coding Agents Explained — Gritcode</title>
+<meta name="description" content="An agent harness is everything around the model: the loop, tools, context, memory and UI. How coding agent harnesses work, examples, and how to choose one.">
+<link rel="canonical" href="https://gritcode.ai/agent-harness/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="What is an agent harness?">
+<meta property="og:description" content="Agent = model + harness. What's inside a coding agent harness, examples, and how to choose one.">
+<meta property="og:url" content="https://gritcode.ai/agent-harness/">
+<meta name="theme-color" content="#0a0b0d">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta property="og:site_name" content="Gritcode">
+<meta property="og:image" content="https://gritcode.ai/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gritcode.ai/assets/og.png">
+<link rel="stylesheet" href="../assets/site.css?v=2">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Gritcode","item":"https://gritcode.ai/"},
+  {"@type":"ListItem","position":2,"name":"What is an agent harness?","item":"https://gritcode.ai/agent-harness/"}]},
+ {"@type":"TechArticle","headline":"What is an agent harness? Coding agent harnesses explained","datePublished":"2026-09-14","dateModified":"2026-09-14",
+  "author":{"@type":"Person","name":"Luke","url":"https://devmindscape.com"},"image":"https://gritcode.ai/assets/og.png",
+  "mainEntityOfPage":"https://gritcode.ai/agent-harness/"},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"What is an agent harness?","acceptedAnswer":{"@type":"Answer","text":"An agent harness is the software around a language model that turns it into an agent: the loop that calls the model, the tools it can use, context management, memory, safety rules and the interface. Agent = model + harness."}},
+  {"@type":"Question","name":"Is Claude Code an agent harness?","acceptedAnswer":{"@type":"Answer","text":"Yes. Claude Code, OpenAI Codex, OpenCode, Aider, Cline, Cursor's agent, DeepSeek Harness and Gritcode are all coding agent harnesses: they wrap a model in a loop with tools, context management and a user interface."}},
+  {"@type":"Question","name":"What is the difference between an agent framework and an agent harness?","acceptedAnswer":{"@type":"Answer","text":"A framework is a library you use to build agents. A harness is the finished runtime around a specific model that you actually use, with its tools, context strategy, permissions and interface already decided."}},
+  {"@type":"Question","name":"What is harness engineering?","acceptedAnswer":{"@type":"Answer","text":"Harness engineering is the work of designing everything around the model, such as tools, context strategy, guardrails and feedback loops, so an agent is reliable and affordable. It often matters as much as the choice of model."}},
+  {"@type":"Question","name":"Is there an open-source coding agent harness with a GUI?","acceptedAnswer":{"@type":"Answer","text":"Yes. Gritcode is an open-source (GPLv3) coding agent harness with a native desktop GUI for macOS and Linux. OpenCode also offers a desktop app in beta."}}
+ ]}
+]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../" aria-label="Gritcode home"><img src="../assets/favicon.svg" alt="" width="28" height="28"><span>Gritcode</span></a>
+    <nav class="links" aria-label="Main">
+      <a href="../features/">Features</a>
+      <a href="../compare/">Compare</a>
+      <a href="../deepseek/">DeepSeek</a>
+      <a href="../linux/">Linux</a>
+      <a href="https://github.com/lszl84/gritcode" rel="noopener">GitHub</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-sponsor btn-sm" href="../sponsor/"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.5 2.3 4.5 6.2 4.5c2.2 0 3.8 1.2 5.8 3.4 2-2.2 3.6-3.4 5.8-3.4 3.9 0 5.8 4 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg>Sponsor</a>
+      <a class="btn btn-primary btn-sm" href="../#download">Download</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="../">Gritcode</a> / Guides / Agent harness</div>
+    <span class="eyebrow">Explainer</span>
+    <h1>What is an agent harness?</h1>
+    <p class="lead">An <strong>agent harness</strong> is all the software around a language model that turns it into an agent. That means the loop that calls the model, the tools it can use, how context is managed, memory, safety rules and the interface. In short: <strong>agent = model + harness</strong>.</p>
+    <p class="updated">Updated 14 September 2026</p>
+  </div>
+</section>
+
+<section class="section tight" style="border-top:0">
+  <div class="wrap prose">
+    <p>On its own, a language model only predicts the next piece of text. It can't open a file, run a test or remember yesterday's session. The harness gives it those abilities, and it decides how well the model uses them. Two agents built on the same model can behave very differently, and cost very differently, because of their harnesses.</p>
+
+    <div class="diagram" role="img" aria-label="Diagram: the user talks to the harness, which runs the agent loop, tools, context and memory, calls the model, and acts on the machine">
+      <div class="layer"><div class="k">You</div><div class="t">Prompts, reviews, approvals</div></div>
+      <div class="link-arrow">↕</div>
+      <div class="layer core">
+        <div class="k">Agent harness</div>
+        <div class="t">Loop: plan, act, observe, repeat</div>
+        <div class="chips"><span>tools</span><span>context management</span><span>memory</span><span>permissions</span><span>verification</span><span>interface</span></div>
+      </div>
+      <div class="link-arrow">↕</div>
+      <div class="duo">
+        <div class="layer"><div class="k">Model</div><div class="t">DeepSeek, Claude, GPT, open-weight models</div></div>
+        <div class="layer"><div class="k">Environment</div><div class="t">Shell, files, browser, build tools</div></div>
+      </div>
+    </div>
+
+    <h2 id="inside">What's inside a coding agent harness</h2>
+    <ol>
+      <li><strong>The agent loop.</strong> Most coding agents use a simple loop: the model reasons, calls a tool, reads the result and repeats until the task is done or it needs you.</li>
+      <li><strong>Tools.</strong> These are the actions the model can take, such as running shell commands, reading, writing and editing files, searching code, searching the web or looking at an image. Good tool design is a big part of a good harness.</li>
+      <li><strong>Context management.</strong> This decides what gets sent back to the model on each turn: which files, which history and which tool output. It's usually the biggest factor in both quality and cost. Compaction, summaries and token budgets all live here.</li>
+      <li><strong>Memory and sessions.</strong> These let you pick up a task tomorrow, or let the agent find how something was solved in another project.</li>
+      <li><strong>Permissions and safety.</strong> These set what the agent may do on its own and what needs your approval, and sometimes where it runs, such as a sandbox or container.</li>
+      <li><strong>Verification.</strong> Running builds and tests and feeding errors back, so the agent can check its own work.</li>
+      <li><strong>The interface.</strong> A terminal, an IDE panel, a web app or a desktop app. This shapes how you review what the agent does.</li>
+    </ol>
+
+    <h2 id="why">Why the harness matters as much as the model</h2>
+    <p>Model benchmarks get the headlines, but day-to-day results depend heavily on the harness. A harness that re-sends too much context burns money. One that compacts too eagerly forgets important details. Weak tools lead to clumsy edits, and a loop without verification leaves broken code behind. That's why teams now talk about <em>harness engineering</em> as its own discipline.</p>
+    <p class="further">Further reading: <a href="https://martinfowler.com/articles/harness-engineering.html" rel="noopener">Harness engineering for coding agent users</a> (Martin Fowler) · <a href="https://www.langchain.com/blog/the-anatomy-of-an-agent-harness" rel="noopener">The anatomy of an agent harness</a> (LangChain) · <a href="https://addyosmani.com/blog/agent-harness-engineering/" rel="noopener">Agent harness engineering</a> (Addy Osmani)</p>
+
+    <h2 id="examples">Examples of coding agent harnesses</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Harness</th><th scope="col">Interface</th><th scope="col">Open source</th><th scope="col">Notes</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Claude Code</th><td>Terminal, IDE extensions, Claude desktop app</td><td>No</td><td>Anthropic; built for Claude models</td></tr>
+          <tr><th scope="row">OpenAI Codex</th><td>CLI, desktop app, IDE extension</td><td>CLI is open source</td><td>OpenAI models</td></tr>
+          <tr><th scope="row">OpenCode</th><td>Terminal, desktop app (beta)</td><td>Yes, MIT</td><td>Many model providers</td></tr>
+          <tr><th scope="row">Aider</th><td>Terminal</td><td>Yes, Apache-2.0</td><td>Git-centric workflow</td></tr>
+          <tr><th scope="row">Cline</th><td>VS Code extension</td><td>Yes, Apache-2.0</td><td>Bring your own key</td></tr>
+          <tr><th scope="row">Cursor</th><td>Full IDE (VS Code fork)</td><td>No</td><td>Agent inside an AI editor</td></tr>
+          <tr><th scope="row">DeepSeek Harness</th><td>Local web app in the browser</td><td>Yes, MIT</td><td>DeepSeek's plugin-based developer preview</td></tr>
+          <tr><th scope="row" class="me">Gritcode</th><td class="me">Native desktop app</td><td class="me">Yes, GPLv3</td><td class="me">Built for DeepSeek V4; about 10&nbsp;MB</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="types">Terminal, IDE, web or native desktop?</h2>
+    <p><strong>Terminal harnesses</strong> such as Claude Code, Codex CLI, OpenCode and Aider are fast to script and easy to use over SSH, but reviewing long diffs and rendered output in a terminal is tiring. <strong>IDE harnesses</strong> such as Cursor and Cline live inside a full editor. That's powerful, but the whole IDE comes along. <strong>Web harnesses</strong> run a local server and use your browser. <strong>Native desktop harnesses</strong> like Gritcode give you a proper GUI with rendered markdown, a file tree and buttons, without a browser engine underneath.</p>
+
+    <h2 id="gritcode">Anatomy of a native harness: how Gritcode does it</h2>
+    <p>Here's how each part maps onto Gritcode, a harness written in C++ for DeepSeek V4:</p>
+    <ul>
+      <li><strong>Loop and tools:</strong> bash, read, write and edit files, grep, web search, URL fetch and vision. <a href="../features/#agent">Details</a></li>
+      <li><strong>Context management:</strong> compaction only near the context limit, a token-budgeted tail, chained summaries and stripped reasoning tokens. <a href="../features/#context">Details</a></li>
+      <li><strong>Memory:</strong> SQLite full-text search across every project, available to the agent as tools. <a href="../features/#memory">Details</a></li>
+      <li><strong>Verification:</strong> the ▶ Play button runs your project without a model call, and errors land back in the chat. <a href="../features/#run">Details</a></li>
+      <li><strong>Sessions:</strong> saved per project, exportable to a <code>.gritsession</code> file and replayable. <a href="../features/#sessions">Details</a></li>
+      <li><strong>Interface:</strong> a native app of 10.5&nbsp;MB that uses 58&nbsp;MB of RAM at rest. <a href="../features/#native">Details</a></li>
+    </ul>
+
+    <h2 id="choose">How to choose a coding agent harness</h2>
+    <ul>
+      <li><strong>Which models do you want to pay for?</strong> The harness often decides this for you.</li>
+      <li><strong>Where do you want to work:</strong> terminal, IDE, browser or desktop app?</li>
+      <li><strong>How does it manage context?</strong> This drives your monthly bill.</li>
+      <li><strong>Can it verify its own work?</strong> Look for builds, tests and runnable previews.</li>
+      <li><strong>Is it open source?</strong> Can you see and change what it sends to the model?</li>
+      <li><strong>What does it cost to leave running all day,</strong> in RAM, CPU and subscription fees?</li>
+    </ul>
+
+    <h2 id="faq">FAQ</h2>
+    <h3>What is an agent harness?</h3>
+    <p>An agent harness is the software around a language model that turns it into an agent: the loop that calls the model, the tools it can use, context management, memory, safety rules and the interface. Agent = model + harness.</p>
+    <h3>Is Claude Code an agent harness?</h3>
+    <p>Yes. Claude Code, OpenAI Codex, OpenCode, Aider, Cline, Cursor's agent, DeepSeek Harness and Gritcode are all coding agent harnesses: they wrap a model in a loop with tools, context management and a user interface.</p>
+    <h3>What is the difference between an agent framework and an agent harness?</h3>
+    <p>A framework is a library you use to build agents. A harness is the finished runtime around a specific model that you actually use, with its tools, context strategy, permissions and interface already decided.</p>
+    <h3>What is harness engineering?</h3>
+    <p>Harness engineering is the work of designing everything around the model, such as tools, context strategy, guardrails and feedback loops, so an agent is reliable and affordable. It often matters as much as the choice of model.</p>
+    <h3>Is there an open-source coding agent harness with a GUI?</h3>
+    <p>Yes. Gritcode is an open-source (GPLv3) coding agent harness with a native desktop GUI for macOS and Linux. OpenCode also offers a desktop app in beta.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Try a native agent harness.</h2>
+        <p>Gritcode is free, open source and a 3.5&nbsp;MB download.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="../#download">Download Gritcode</a>
+        <a class="btn btn-ghost" href="../features/">See features</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="../"><img src="../assets/favicon.svg" alt="" width="28" height="28"><span>Gritcode</span></a>
+        <p>Gritcode is a native, open-source AI coding agent and agent harness for DeepSeek V4, for macOS and Linux.</p>
+        <div class="cta-row">
+          <a class="btn btn-sponsor btn-sm" href="https://github.com/sponsors/lszl84" rel="noopener">♥ GitHub Sponsors</a>
+          <a class="btn btn-ghost btn-sm" href="https://patreon.com/LukeDevMindscape" rel="noopener">Patreon</a>
+        </div>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="../features/">Features</a></li>
+          <li><a href="../#download">Download</a></li>
+          <li><a href="../deepseek/">DeepSeek desktop app</a></li>
+          <li><a href="../linux/">Gritcode for Linux</a></li>
+          <li><a href="https://github.com/lszl84/gritcode/releases" rel="noopener">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Compare</h4>
+        <ul>
+          <li><a href="../compare/claude-code/">vs Claude Code</a></li>
+          <li><a href="../compare/cursor/">vs Cursor</a></li>
+          <li><a href="../compare/opencode/">vs OpenCode</a></li>
+          <li><a href="../compare/deepseek-harness/">vs DeepSeek Harness</a></li>
+          <li><a href="../compare/">All comparisons</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Guides</h4>
+        <ul>
+          <li><a href="../claude-code-deepseek/">Claude Code with DeepSeek</a></li>
+          <li><a href="../agent-harness/">What is an agent harness?</a></li>
+          <li><a href="../deepseek/#setup">Set up DeepSeek</a></li>
+          <li><a href="../linux/#install">Install on Linux</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://github.com/lszl84/gritcode" rel="noopener">GitHub</a></li>
+          <li><a href="https://github.com/lszl84/gritcode/issues" rel="noopener">Report an issue</a></li>
+          <li><a href="https://youtube.com/@devmindscapetutorials" rel="noopener">YouTube</a></li>
+          <li><a href="../sponsor/">Sponsor</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fine">
+      <span>© 2026 Luke · <a href="https://devmindscape.com" rel="noopener">DevMindscape</a> · Licensed under <a href="https://github.com/lszl84/gritcode/blob/main/LICENSE" rel="noopener">GPLv3</a></span>
+      <span>DeepSeek, Claude, Cursor and OpenCode are trademarks of their respective owners.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="thanks" role="status" hidden>
+  <button class="x" type="button" aria-label="Close">×</button>
+  <p><b>Thanks for downloading Gritcode!</b> It's free and built by one developer. If it saves you time, please consider sponsoring.</p>
+  <div class="cta-row">
+    <a class="btn btn-sponsor btn-sm" href="https://github.com/sponsors/lszl84" rel="noopener">♥ GitHub Sponsors</a>
+    <a class="btn btn-patreon btn-sm" href="https://patreon.com/LukeDevMindscape" rel="noopener">Patreon</a>
+  </div>
+</div>
+<script src="../assets/site.js?v=3" defer></script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gritcode vs Cursor — Lightweight Open-Source Cursor Alternative</title>
+<meta name="description" content="A lightweight, open-source Cursor alternative for the agentic era: the essentials of an IDE, none of the bloat, and DeepSeek V4. 10.5 MB vs 1.36 GB.">
+<link rel="canonical" href="https://gritcode.ai/compare/cursor/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gritcode vs Cursor">
+<meta property="og:description" content="In the agentic era you type less and review more. A lightweight, open-source Cursor alternative.">
+<meta property="og:url" content="https://gritcode.ai/compare/cursor/">
+<meta name="theme-color" content="#0a0b0d">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<meta property="og:site_name" content="Gritcode">
+<meta property="og:image" content="https://gritcode.ai/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gritcode.ai/assets/og.png">
+<link rel="stylesheet" href="../../assets/site.css?v=2">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Gritcode","item":"https://gritcode.ai/"},
+  {"@type":"ListItem","position":2,"name":"Compare","item":"https://gritcode.ai/compare/"},
+  {"@type":"ListItem","position":3,"name":"Gritcode vs Cursor","item":"https://gritcode.ai/compare/cursor/"}]},
+ {"@type":"Article","headline":"Gritcode vs Cursor","datePublished":"2026-09-14","dateModified":"2026-09-14",
+  "author":{"@type":"Person","name":"Luke","url":"https://devmindscape.com"},"image":"https://gritcode.ai/assets/og.png","mainEntityOfPage":"https://gritcode.ai/compare/cursor/"},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Is Gritcode a free Cursor alternative?","acceptedAnswer":{"@type":"Answer","text":"Yes. Gritcode is free and open source. You pay DeepSeek per token with your own key, or use the free OpenCode model with no key at all."}},
+  {"@type":"Question","name":"Does Gritcode have a code editor?","acceptedAnswer":{"@type":"Answer","text":"Yes. Gritcode has a file tree and an editor with tree-sitter syntax highlighting, smart indentation and save, next to the agent chat. It deliberately leaves out the rest of a classic IDE."}},
+  {"@type":"Question","name":"Does Gritcode have tab autocomplete like Cursor?","acceptedAnswer":{"@type":"Answer","text":"No. Gritcode is agent-first: you describe the change and the agent makes it. If inline completions are central to how you work, Cursor is the better fit."}},
+  {"@type":"Question","name":"Can I use Gritcode alongside VS Code or Cursor?","acceptedAnswer":{"@type":"Answer","text":"Yes. Gritcode works on ordinary project folders, so you can keep your editor open for the occasional deep edit and let Gritcode's agent do the rest."}}
+ ]}
+]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../../" aria-label="Gritcode home"><img src="../../assets/favicon.svg" alt="" width="28" height="28"><span>Gritcode</span></a>
+    <nav class="links" aria-label="Main">
+      <a href="../../features/">Features</a>
+      <a href="../../compare/" aria-current="page">Compare</a>
+      <a href="../../deepseek/">DeepSeek</a>
+      <a href="../../linux/">Linux</a>
+      <a href="https://github.com/lszl84/gritcode" rel="noopener">GitHub</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-sponsor btn-sm" href="../../sponsor/"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.5 2.3 4.5 6.2 4.5c2.2 0 3.8 1.2 5.8 3.4 2-2.2 3.6-3.4 5.8-3.4 3.9 0 5.8 4 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg>Sponsor</a>
+      <a class="btn btn-primary btn-sm" href="../../#download">Download</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="../../">Gritcode</a> / <a href="../../compare/">Compare</a> / Cursor</div>
+    <span class="eyebrow">Cursor alternative</span>
+    <h1>Gritcode vs Cursor</h1>
+    <p class="lead">Cursor adds agents to a full classic IDE. Gritcode starts from the agent and keeps only the parts of an IDE you still need. It's a <strong>lightweight, open-source Cursor alternative</strong>: 10.5&nbsp;MB instead of 1.36&nbsp;GB.</p>
+  </div>
+</section>
+
+<section class="section tight" style="border-top:0">
+  <div class="wrap">
+    <h2 class="sr-only">Quick verdict</h2>
+    <div class="verdicts">
+      <div class="card">
+        <h3>Choose Cursor if…</h3>
+        <p>most of your day is still typing code by hand, you depend on tab completions, VS Code extensions and the debugger, or you need Windows.</p>
+      </div>
+      <div class="card hl">
+        <h3>Choose Gritcode if…</h3>
+        <p>you let the agent write most of the code and want a fast, focused place to direct it, review its work and run the result, without a subscription.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap prose">
+    <h2>The IDE is changing</h2>
+    <p>In the agentic era you type less and review more. You still need to see the code and the project outline, and to make the odd small change. But the sprawling IDEs of the past, with their panels, toolbars and a thousand settings, are fading. <strong>Gritcode keeps what's essential and cuts out the fluff:</strong> a file tree, an editor with tree-sitter syntax highlighting, quick edits and save, right beside the agent.</p>
+
+    <h2>At a glance</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col"></th><th scope="col" class="me">Gritcode</th><th scope="col">Cursor</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Type</th><td class="me">Agent-first desktop app</td><td>AI code editor (VS Code fork)</td></tr>
+          <tr><th scope="row">App size (macOS)</th><td class="me">10.5 MB</td><td>1.36 GB</td></tr>
+          <tr><th scope="row">RAM at rest</th><td class="me">58 MB</td><td>1.6 GB (15 processes)</td></tr>
+          <tr><th scope="row">Technology</th><td class="me">Native C++20 / wxWidgets</td><td>Electron</td></tr>
+          <tr><th scope="row">Editor</th><td class="me">The essentials: file tree, syntax highlighting, quick edits</td><td>Full IDE: extensions, debugger, tab completion</td></tr>
+          <tr><th scope="row">Models</th><td class="me">DeepSeek V4 Pro, V4.1 Flash, free OpenCode Zen model</td><td>Several providers</td></tr>
+          <tr><th scope="row">Pricing</th><td class="me">Free app; pay DeepSeek per token, or $0 on the free tier</td><td>Subscription plans, limited free tier</td></tr>
+          <tr><th scope="row">Open source</th><td class="me">Yes, GPLv3</td><td>No</td></tr>
+          <tr><th scope="row">Platforms</th><td class="me">macOS, Linux</td><td>macOS, Windows, Linux</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Where Cursor is better</h2>
+    <ul>
+      <li><strong>Hands-on editing.</strong> Tab completions, multi-cursor editing and refactoring tools suit people who still write most code themselves.</li>
+      <li><strong>The VS Code ecosystem.</strong> Extensions, the debugger, language tooling and settings sync.</li>
+      <li><strong>Model choice.</strong> Several frontier providers in one app.</li>
+      <li><strong>Windows support.</strong></li>
+    </ul>
+
+    <h2>Where Gritcode is better</h2>
+    <ul>
+      <li><strong>Focus.</strong> The agent comes first, with only the editor features you need to review and adjust its work.</li>
+      <li><strong>▶ Play.</strong> One click builds and runs your project without spending tokens, and errors land back in the chat.</li>
+      <li><strong>Footprint.</strong> A 10.5&nbsp;MB native app that idles at 58&nbsp;MB of RAM, compared with a 1.36&nbsp;GB Electron IDE that idled at about 1.6&nbsp;GB of RAM in our test.</li>
+      <li><strong>Price.</strong> No subscription. DeepSeek V4 is billed per token, and the free tier needs no key.</li>
+      <li><strong>Openness.</strong> It's GPLv3, so you can read and change everything.</li>
+    </ul>
+
+    <h2>Use them together</h2>
+    <p>Gritcode works on ordinary project folders. Many people keep their editor open for the occasional deep edit and let Gritcode's agent do the rest.</p>
+
+    <h2>FAQ</h2>
+    <h3>Is Gritcode a free Cursor alternative?</h3>
+    <p>Yes. Gritcode is free and open source. You pay DeepSeek per token with your own key, or use the free OpenCode model with no key at all.</p>
+    <h3>Does Gritcode have a code editor?</h3>
+    <p>Yes. Gritcode has a file tree and an editor with tree-sitter syntax highlighting, smart indentation and save, next to the agent chat. It deliberately leaves out the rest of a classic IDE.</p>
+    <h3>Does Gritcode have tab autocomplete like Cursor?</h3>
+    <p>No. Gritcode is agent-first: you describe the change and the agent makes it. If inline completions are central to how you work, Cursor is the better fit.</p>
+    <h3>Can I use Gritcode alongside VS Code or Cursor?</h3>
+    <p>Yes. Gritcode works on ordinary project folders, so you can keep your editor open for the occasional deep edit and let Gritcode's agent do the rest.</p>
+    <p class="table-note">Measured on an Apple Silicon Mac on 14 Sep 2026. RAM is the macOS memory footprint summed over all of the app's processes while idle (Cursor: about 20 minutes after launch). Product details change often, so check Cursor's site for current plans.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Try the lightweight Cursor alternative.</h2>
+        <p>Free, open source, 3.5&nbsp;MB. No account needed.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="../../#download">Download Gritcode</a>
+        <a class="btn btn-ghost" href="../../compare/">All comparisons</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="../../"><img src="../../assets/favicon.svg" alt="" width="28" height="28"><span>Gritcode</span></a>
+        <p>Gritcode is a native, open-source AI coding agent and agent harness for DeepSeek V4, for macOS and Linux.</p>
+        <div class="cta-row">
+          <a class="btn btn-sponsor btn-sm" href="https://github.com/sponsors/lszl84" rel="noopener">♥ GitHub Sponsors</a>
+          <a class="btn btn-ghost btn-sm" href="https://patreon.com/LukeDevMindscape" rel="noopener">Patreon</a>
+        </div>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="../../features/">Features</a></li>
+          <li><a href="../../#download">Download</a></li>
+          <li><a href="../../deepseek/">DeepSeek desktop app</a></li>
+          <li><a href="../../linux/">Gritcode for Linux</a></li>
+          <li><a href="https://github.com/lszl84/gritcode/releases" rel="noopener">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Compare</h4>
+        <ul>
+          <li><a href="../../compare/claude-code/">vs Claude Code</a></li>
+          <li><a href="../../compare/cursor/">vs Cursor</a></li>
+          <li><a href="../../compare/opencode/">vs OpenCode</a></li>
+          <li><a href="../../compare/deepseek-harness/">vs DeepSeek Harness</a></li>
+          <li><a href="../../compare/">All comparisons</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Guides</h4>
+        <ul>
+          <li><a href="../../claude-code-deepseek/">Claude Code with DeepSeek</a></li>
+          <li><a href="../../agent-harness/">What is an agent harness?</a></li>
+          <li><a href="../../deepseek/#setup">Set up DeepSeek</a></li>
+          <li><a href="../../linux/#install">Install on Linux</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://github.com/lszl84/gritcode" rel="noopener">GitHub</a></li>
+          <li><a href="https://github.com/lszl84/gritcode/issues" rel="noopener">Report an issue</a></li>
+          <li><a href="https://youtube.com/@devmindscapetutorials" rel="noopener">YouTube</a></li>
+          <li><a href="../../sponsor/">Sponsor</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fine">
+      <span>© 2026 Luke · <a href="https://devmindscape.com" rel="noopener">DevMindscape</a> · Licensed under <a href="https://github.com/lszl84/gritcode/blob/main/LICENSE" rel="noopener">GPLv3</a></span>
+      <span>DeepSeek, Claude, Cursor and OpenCode are trademarks of their respective owners.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="thanks" role="status" hidden>
+  <button class="x" type="button" aria-label="Close">×</button>
+  <p><b>Thanks for downloading Gritcode!</b> It's free and built by one developer. If it saves you time, please consider sponsoring.</p>
+  <div class="cta-row">
+    <a class="btn btn-sponsor btn-sm" href="https://github.com/sponsors/lszl84" rel="noopener">♥ GitHub Sponsors</a>
+    <a class="btn btn-patreon btn-sm" href="https://patreon.com/LukeDevMindscape" rel="noopener">Patreon</a>
+  </div>
+</div>
+<script src="../../assets/site.js?v=3" defer></script>
+</body>
+</html>

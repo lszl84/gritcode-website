@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Linux AI Coding Agent — Native GUI for Ubuntu | Gritcode</title>
+<meta name="description" content="Gritcode is a native GTK AI coding agent for Linux: a lightweight GUI alternative to Claude Code and OpenCode for Ubuntu and Debian. Free, open source, DeepSeek V4.">
+<link rel="canonical" href="https://gritcode.ai/linux/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="A native AI coding agent for Linux — Gritcode">
+<meta property="og:description" content="Native GTK, a sub-1 MB .deb, DeepSeek V4 or a free model. A GUI coding agent that feels at home on Linux.">
+<meta property="og:url" content="https://gritcode.ai/linux/">
+<meta name="theme-color" content="#0a0b0d">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta property="og:site_name" content="Gritcode">
+<meta property="og:image" content="https://gritcode.ai/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gritcode.ai/assets/og.png">
+<link rel="stylesheet" href="../assets/site.css?v=2">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Gritcode","item":"https://gritcode.ai/"},
+  {"@type":"ListItem","position":2,"name":"Linux","item":"https://gritcode.ai/linux/"}]},
+ {"@type":"VideoObject","name":"Gritcode on Debian 13 with Xfce","description":"Time-lapse of Gritcode, a native AI coding agent, building a wxPython app on Debian 13 with the Xfce desktop, ending with the agent's verification report.","thumbnailUrl":"https://gritcode.ai/media/linux-xfce.webp","contentUrl":"https://gritcode.ai/media/linux-xfce.mp4","uploadDate":"2026-09-14","duration":"PT49S"},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Does Gritcode run on Linux?","acceptedAnswer":{"@type":"Answer","text":"Yes. Gritcode ships a .deb package for Ubuntu and Debian and can be built from source on other distributions. It uses native GTK widgets."}},
+  {"@type":"Question","name":"Is there a Claude Code GUI for Linux?","acceptedAnswer":{"@type":"Answer","text":"Anthropic's Claude Desktop has a Linux beta for Ubuntu and Debian. Gritcode is an open-source, native alternative that runs DeepSeek V4 or a free model instead of Claude."}},
+  {"@type":"Question","name":"Is there an OpenCode GUI for Linux?","acceptedAnswer":{"@type":"Answer","text":"OpenCode has a desktop app in beta, built on Electron. Gritcode is a separate, native GTK coding agent for Linux."}},
+  {"@type":"Question","name":"Are there Fedora or Arch packages?","acceptedAnswer":{"@type":"Answer","text":"Not yet. On Fedora, Arch and other distributions, build Gritcode from source with CMake."}},
+  {"@type":"Question","name":"Where does Gritcode store my API key on Linux?","acceptedAnswer":{"@type":"Answer","text":"In your desktop keyring through the Secret Service API, for example GNOME Keyring, not in a plain-text file."}}
+ ]}
+]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../" aria-label="Gritcode home"><img src="../assets/favicon.svg" alt="" width="28" height="28"><span>Gritcode</span></a>
+    <nav class="links" aria-label="Main">
+      <a href="../features/">Features</a>
+      <a href="../compare/">Compare</a>
+      <a href="../deepseek/">DeepSeek</a>
+      <a href="../linux/" aria-current="page">Linux</a>
+      <a href="https://github.com/lszl84/gritcode" rel="noopener">GitHub</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-sponsor btn-sm" href="../sponsor/"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.5 2.3 4.5 6.2 4.5c2.2 0 3.8 1.2 5.8 3.4 2-2.2 3.6-3.4 5.8-3.4 3.9 0 5.8 4 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg>Sponsor</a>
+      <a class="btn btn-primary btn-sm" href="../#download">Download</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="../">Gritcode</a> / Linux</div>
+    <span class="eyebrow">Linux</span>
+    <h1>A native AI coding agent for Linux</h1>
+    <p class="lead">Gritcode is a <strong>GUI coding agent that feels at home on the Linux desktop</strong>: native GTK widgets, a sub-1&nbsp;MB .deb, and no Electron. It's free, open source and runs DeepSeek V4, or a free model with no API key.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary btn-lg" data-asset="deb" href="https://github.com/lszl84/gritcode/releases/latest">Download .deb <small data-size>0.9 MB</small></a>
+      <a class="btn btn-ghost btn-lg" href="#source">Build from source</a>
+      <a class="btn btn-ghost btn-lg" href="https://github.com/lszl84/gritcode" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight" style="border-top:0">
+  <div class="wrap">
+    <figure>
+      <div class="shot">
+        <video data-autoplay muted loop playsinline preload="none" poster="../media/linux-xfce.webp" width="1600" height="900" aria-label="Gritcode running full screen on Debian 13 with the Xfce desktop, building a wxPython app and ending with the agent's verification report">
+          <source src="../media/linux-xfce.mp4" type="video/mp4">
+        </video>
+      </div>
+      <figcaption>A real session on Debian 13 with Xfce: fast-forwarded while the agent works, slowed down whenever the app is on screen. The agent builds a wxPython video clipper from an empty folder, with a saved session open for reference on the left, and finishes with its own verification report.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap prose">
+    <h2 id="why">Why Linux developers pick Gritcode</h2>
+    <ul>
+      <li><strong>Native GTK, not a browser engine.</strong> It follows your GTK theme, including dark mode, and starts instantly.</li>
+      <li><strong>Tiny.</strong> The .deb is under 1&nbsp;MB, and the app uses about 70&nbsp;MB of RAM on Linux, depending on session size.</li>
+      <li><strong>Your shell, your tools.</strong> The agent runs commands with your login shell's environment, so your PATH, toolchains and virtualenvs just work.</li>
+      <li><strong>Keys in your keyring.</strong> API keys go through the Secret Service API (GNOME Keyring and compatible providers), not a dotfile.</li>
+      <li><strong>Open source, GPLv3.</strong> Build it yourself on any distribution.</li>
+    </ul>
+
+    <h2 id="landscape">Linux coding agents with a GUI in 2026</h2>
+    <p>Most coding agents on Linux are terminal-first: Claude Code, OpenCode, Aider and Codex CLI. Desktop GUIs are arriving, but mostly as betas built on Electron:</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">App</th><th scope="col">Linux GUI</th><th scope="col">Technology</th><th scope="col">Open source</th></tr></thead>
+        <tbody>
+          <tr><th scope="row" class="me">Gritcode</th><td class="me">Stable .deb; build from source anywhere</td><td class="me">Native GTK (C++20, wxWidgets)</td><td class="me">Yes, GPLv3</td></tr>
+          <tr><th scope="row">Claude Desktop</th><td>Beta for Ubuntu and Debian (since June 2026)</td><td>Electron</td><td>No</td></tr>
+          <tr><th scope="row">OpenCode Desktop</th><td>Beta</td><td>Electron</td><td>Yes, MIT</td></tr>
+          <tr><th scope="row">Cursor</th><td>Yes (full IDE)</td><td>Electron (VS Code fork)</td><td>No</td></tr>
+          <tr><th scope="row">OpenAI Codex app</th><td>macOS and Windows only at the time of writing</td><td>—</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">As of 14 Sep 2026. Check each vendor for current Linux support.</p>
+
+    <h2 id="install">Install on Ubuntu or Debian</h2>
+    <ol class="steps">
+      <li><strong>Download the .deb</strong> from the button above or from <a href="https://github.com/lszl84/gritcode/releases/latest" rel="noopener">GitHub Releases</a>. It's built on Ubuntu 24.04 LTS; on older releases, <a href="#source">build from source</a>.</li>
+      <li><strong>Install it with apt,</strong> which pulls in the dependencies:<pre><code>sudo apt install ./gritcode-*-Linux.deb</code></pre></li>
+      <li><strong>Launch Gritcode</strong> from your application menu, pick a project folder and start prompting. The free model works right away.</li>
+    </ol>
+
+    <h2 id="source">Build from source (Fedora, Arch and others)</h2>
+    <p>On Debian and Ubuntu:</p>
+<pre><code>sudo apt install build-essential cmake ninja-build pkg-config \
+    libwxgtk3.2-dev libgtk-3-dev libcurl4-openssl-dev \
+    libsqlite3-dev libsecret-1-dev
+git clone https://github.com/lszl84/gritcode.git && cd gritcode
+cmake --preset release
+cmake --build --preset release
+./build/gritcode</code></pre>
+    <p>On other distributions, install the equivalent development packages for wxWidgets 3.2 (GTK 3), GTK 3, libcurl, SQLite and libsecret, plus CMake and Ninja, then run the same <code>cmake</code> commands. Distro packages such as AUR or Flathub aren't available yet. Contributions are welcome.</p>
+
+    <h2 id="models">Set up a model</h2>
+    <p>Gritcode starts on the free <strong>OpenCode Free</strong> model, with no key and no sign-up. For more power, click the <img class="ico-inline" src="../assets/gear.svg" alt="gear icon"> gear button in the bottom toolbar, add a DeepSeek API key in Settings, and choose DeepSeek V4 Pro or V4.1 Flash. <a href="../deepseek/">More about using DeepSeek in Gritcode →</a></p>
+
+    <h2 id="faq">FAQ</h2>
+    <h3>Does Gritcode run on Linux?</h3>
+    <p>Yes. Gritcode ships a .deb package for Ubuntu and Debian and can be built from source on other distributions. It uses native GTK widgets.</p>
+    <h3>Is there a Claude Code GUI for Linux?</h3>
+    <p>Anthropic's Claude Desktop has a Linux beta for Ubuntu and Debian. Gritcode is an open-source, native alternative that runs DeepSeek V4 or a free model instead of Claude. See <a href="../compare/claude-code/">Gritcode vs Claude Code</a>.</p>
+    <h3>Is there an OpenCode GUI for Linux?</h3>
+    <p>OpenCode has a desktop app in beta, built on Electron. Gritcode is a separate, native GTK coding agent for Linux. See <a href="../compare/opencode/">Gritcode vs OpenCode</a>.</p>
+    <h3>Are there Fedora or Arch packages?</h3>
+    <p>Not yet. On Fedora, Arch and other distributions, build Gritcode from source with CMake.</p>
+    <h3>Where does Gritcode store my API key on Linux?</h3>
+    <p>In your desktop keyring through the Secret Service API, for example GNOME Keyring, not in a plain-text file.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Bring a native agent to your Linux desktop.</h2>
+        <p>Free, open source, under 1&nbsp;MB to download.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" data-asset="deb" href="https://github.com/lszl84/gritcode/releases/latest">Download .deb</a>
+        <a class="btn btn-sponsor" href="../sponsor/">♥ Sponsor</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="../"><img src="../assets/favicon.svg" alt="" width="28" height="28"><span>Gritcode</span></a>
+        <p>Gritcode is a native, open-source AI coding agent and agent harness for DeepSeek V4, for macOS and Linux.</p>
+        <div class="cta-row">
+          <a class="btn btn-sponsor btn-sm" href="https://github.com/sponsors/lszl84" rel="noopener">♥ GitHub Sponsors</a>
+          <a class="btn btn-ghost btn-sm" href="https://patreon.com/LukeDevMindscape" rel="noopener">Patreon</a>
+        </div>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="../features/">Features</a></li>
+          <li><a href="../#download">Download</a></li>
+          <li><a href="../deepseek/">DeepSeek desktop app</a></li>
+          <li><a href="../linux/">Gritcode for Linux</a></li>
+          <li><a href="https://github.com/lszl84/gritcode/releases" rel="noopener">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Compare</h4>
+        <ul>
+          <li><a href="../compare/claude-code/">vs Claude Code</a></li>
+          <li><a href="../compare/cursor/">vs Cursor</a></li>
+          <li><a href="../compare/opencode/">vs OpenCode</a></li>
+          <li><a href="../compare/deepseek-harness/">vs DeepSeek Harness</a></li>
+          <li><a href="../compare/">All comparisons</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Guides</h4>
+        <ul>
+          <li><a href="../claude-code-deepseek/">Claude Code with DeepSeek</a></li>
+          <li><a href="../agent-harness/">What is an agent harness?</a></li>
+          <li><a href="../deepseek/#setup">Set up DeepSeek</a></li>
+          <li><a href="../linux/#install">Install on Linux</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://github.com/lszl84/gritcode" rel="noopener">GitHub</a></li>
+          <li><a href="https://github.com/lszl84/gritcode/issues" rel="noopener">Report an issue</a></li>
+          <li><a href="https://youtube.com/@devmindscapetutorials" rel="noopener">YouTube</a></li>
+          <li><a href="../sponsor/">Sponsor</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fine">
+      <span>© 2026 Luke · <a href="https://devmindscape.com" rel="noopener">DevMindscape</a> · Licensed under <a href="https://github.com/lszl84/gritcode/blob/main/LICENSE" rel="noopener">GPLv3</a></span>
+      <span>DeepSeek, Claude, Cursor and OpenCode are trademarks of their respective owners.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="thanks" role="status" hidden>
+  <button class="x" type="button" aria-label="Close">×</button>
+  <p><b>Thanks for downloading Gritcode!</b> It's free and built by one developer. If it saves you time, please consider sponsoring.</p>
+  <div class="cta-row">
+    <a class="btn btn-sponsor btn-sm" href="https://github.com/sponsors/lszl84" rel="noopener">♥ GitHub Sponsors</a>
+    <a class="btn btn-patreon btn-sm" href="https://patreon.com/LukeDevMindscape" rel="noopener">Patreon</a>
+  </div>
+</div>
+<script src="../assets/site.js?v=3" defer></script>
+</body>
+</html>

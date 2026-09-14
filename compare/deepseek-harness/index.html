@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gritcode vs DeepSeek Harness — Native Desktop Alternative</title>
+<meta name="description" content="DeepSeek Harness is DeepSeek's plugin-based agent framework, run in the browser. Gritcode is a finished native desktop app for DeepSeek. How they compare.">
+<link rel="canonical" href="https://gritcode.ai/compare/deepseek-harness/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Gritcode vs DeepSeek Harness">
+<meta property="og:description" content="DeepSeek's official plugin framework in the browser vs a finished native desktop app for DeepSeek.">
+<meta property="og:url" content="https://gritcode.ai/compare/deepseek-harness/">
+<meta name="theme-color" content="#0a0b0d">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../../assets/apple-touch-icon.png">
+<meta property="og:site_name" content="Gritcode">
+<meta property="og:image" content="https://gritcode.ai/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gritcode.ai/assets/og.png">
+<link rel="stylesheet" href="../../assets/site.css?v=2">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Gritcode","item":"https://gritcode.ai/"},
+  {"@type":"ListItem","position":2,"name":"Compare","item":"https://gritcode.ai/compare/"},
+  {"@type":"ListItem","position":3,"name":"Gritcode vs DeepSeek Harness","item":"https://gritcode.ai/compare/deepseek-harness/"}]},
+ {"@type":"Article","headline":"Gritcode vs DeepSeek Harness","datePublished":"2026-09-14","dateModified":"2026-09-14",
+  "author":{"@type":"Person","name":"Luke","url":"https://devmindscape.com"},"image":"https://gritcode.ai/assets/og.png","mainEntityOfPage":"https://gritcode.ai/compare/deepseek-harness/"},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Is Gritcode made by DeepSeek?","acceptedAnswer":{"@type":"Answer","text":"No. Gritcode is an independent open-source project. DeepSeek Harness is DeepSeek's own agent framework."}},
+  {"@type":"Question","name":"Is DeepSeek Harness a desktop app?","acceptedAnswer":{"@type":"Answer","text":"DeepSeek Harness runs as a local web app: you start it with npx @deepseek-ai/dsh web (Node.js) and use it in your browser. It is a developer preview."}},
+  {"@type":"Question","name":"Can I use both?","acceptedAnswer":{"@type":"Answer","text":"Yes. Both use your DeepSeek API key and work on normal project folders."}}
+ ]}
+]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../../" aria-label="Gritcode home"><img src="../../assets/favicon.svg" alt="" width="28" height="28"><span>Gritcode</span></a>
+    <nav class="links" aria-label="Main">
+      <a href="../../features/">Features</a>
+      <a href="../../compare/" aria-current="page">Compare</a>
+      <a href="../../deepseek/">DeepSeek</a>
+      <a href="../../linux/">Linux</a>
+      <a href="https://github.com/lszl84/gritcode" rel="noopener">GitHub</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-sponsor btn-sm" href="../../sponsor/"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.5 2.3 4.5 6.2 4.5c2.2 0 3.8 1.2 5.8 3.4 2-2.2 3.6-3.4 5.8-3.4 3.9 0 5.8 4 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg>Sponsor</a>
+      <a class="btn btn-primary btn-sm" href="../../#download">Download</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="../../">Gritcode</a> / <a href="../../compare/">Compare</a> / DeepSeek Harness</div>
+    <span class="eyebrow">DeepSeek Harness alternative</span>
+    <h1>Gritcode vs DeepSeek Harness</h1>
+    <p class="lead">DeepSeek Harness is DeepSeek's own agent harness, where "everything is a plugin". It's MIT-licensed and in developer preview, and runs as a local web app. Gritcode is an independent, <strong>finished native desktop app</strong> for coding with DeepSeek. They suit different people.</p>
+  </div>
+</section>
+
+<section class="section tight" style="border-top:0">
+  <div class="wrap">
+    <h2 class="sr-only">Quick verdict</h2>
+    <div class="verdicts">
+      <div class="card">
+        <h3>Choose DeepSeek Harness if…</h3>
+        <p>you want DeepSeek's official framework, plan to build or swap plugins, need subagents and different run modes, or are benchmarking agent designs.</p>
+      </div>
+      <div class="card hl">
+        <h3>Choose Gritcode if…</h3>
+        <p>you want to download an app and start coding with DeepSeek right away. You get a native window, an editor, the ▶&nbsp;Play button and a free tier, with no Node.js and no browser tab.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap prose">
+    <h2>At a glance</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col"></th><th scope="col" class="me">Gritcode</th><th scope="col">DeepSeek Harness</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Made by</th><td class="me">Luke, an independent developer</td><td>DeepSeek</td></tr>
+          <tr><th scope="row">License</th><td class="me">GPLv3</td><td>MIT</td></tr>
+          <tr><th scope="row">Status</th><td class="me">Stable releases</td><td>Developer preview</td></tr>
+          <tr><th scope="row">How it runs</th><td class="me">Native desktop app (.dmg, .deb)</td><td><code>npx @deepseek-ai/dsh web</code>, then use it in your browser</td></tr>
+          <tr><th scope="row">Needs</th><td class="me">Nothing extra</td><td>Node.js</td></tr>
+          <tr><th scope="row">Architecture</th><td class="me">Compact C++20 app</td><td>Everything is a plugin: models, tools, skills, sessions, UI</td></tr>
+          <tr><th scope="row">Sessions</th><td class="me">Per-project SQLite history, cross-project search, <code>.gritsession</code> export and replay</td><td>Append-only session logs with resume, fork, search and replay</td></tr>
+          <tr><th scope="row">Editor and ▶ Play</th><td class="me">Yes</td><td>—</td></tr>
+          <tr><th scope="row">Subagents</th><td class="me">—</td><td>Yes</td></tr>
+          <tr><th scope="row">Free tier without a key</th><td class="me">Yes, OpenCode Free</td><td>No</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Where DeepSeek Harness is better</h2>
+    <ul>
+      <li><strong>It's official.</strong> It comes straight from the team that builds the models.</li>
+      <li><strong>Extensibility.</strong> Almost every behaviour is a swappable plugin, configurable without touching the source.</li>
+      <li><strong>Subagents and run modes,</strong> including Standard, Code, Minimal and Creator presets.</li>
+      <li><strong>Traceability.</strong> Every run is logged and can be resumed, forked or replayed.</li>
+    </ul>
+
+    <h2>Where Gritcode is better</h2>
+    <ul>
+      <li><strong>Install and go.</strong> A 3.5&nbsp;MB download and a signed app, with no Node.js, no <code>npx</code> and no local server.</li>
+      <li><strong>A real desktop app.</strong> Native widgets and your OS keyring instead of a browser tab.</li>
+      <li><strong>Built for daily coding.</strong> File tree, editor, the ▶&nbsp;Play button and cross-project memory.</li>
+      <li><strong>Lightweight.</strong> 58&nbsp;MB of RAM at rest.</li>
+      <li><strong>Try it free.</strong> The OpenCode Free model works with no DeepSeek key.</li>
+    </ul>
+
+    <h2>FAQ</h2>
+    <h3>Is Gritcode made by DeepSeek?</h3>
+    <p>No. Gritcode is an independent open-source project. DeepSeek Harness is DeepSeek's own agent framework.</p>
+    <h3>Is DeepSeek Harness a desktop app?</h3>
+    <p>DeepSeek Harness runs as a local web app: you start it with <code>npx @deepseek-ai/dsh web</code> (Node.js) and use it in your browser. It is a developer preview.</p>
+    <h3>Can I use both?</h3>
+    <p>Yes. Both use your DeepSeek API key and work on normal project folders.</p>
+    <p class="table-note">Based on DeepSeek's <a href="https://www.deepseek.com/harness/en/" rel="noopener">DeepSeek Harness page</a> as of 14 Sep 2026. Details may change while it's in preview.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>DeepSeek, in a native app.</h2>
+        <p>Free, open source, 3.5&nbsp;MB. Paste your key and go.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="../../#download">Download Gritcode</a>
+        <a class="btn btn-ghost" href="../../deepseek/">DeepSeek desktop app</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="../../"><img src="../../assets/favicon.svg" alt="" width="28" height="28"><span>Gritcode</span></a>
+        <p>Gritcode is a native, open-source AI coding agent and agent harness for DeepSeek V4, for macOS and Linux.</p>
+        <div class="cta-row">
+          <a class="btn btn-sponsor btn-sm" href="https://github.com/sponsors/lszl84" rel="noopener">♥ GitHub Sponsors</a>
+          <a class="btn btn-ghost btn-sm" href="https://patreon.com/LukeDevMindscape" rel="noopener">Patreon</a>
+        </div>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="../../features/">Features</a></li>
+          <li><a href="../../#download">Download</a></li>
+          <li><a href="../../deepseek/">DeepSeek desktop app</a></li>
+          <li><a href="../../linux/">Gritcode for Linux</a></li>
+          <li><a href="https://github.com/lszl84/gritcode/releases" rel="noopener">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Compare</h4>
+        <ul>
+          <li><a href="../../compare/claude-code/">vs Claude Code</a></li>
+          <li><a href="../../compare/cursor/">vs Cursor</a></li>
+          <li><a href="../../compare/opencode/">vs OpenCode</a></li>
+          <li><a href="../../compare/deepseek-harness/">vs DeepSeek Harness</a></li>
+          <li><a href="../../compare/">All comparisons</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Guides</h4>
+        <ul>
+          <li><a href="../../claude-code-deepseek/">Claude Code with DeepSeek</a></li>
+          <li><a href="../../agent-harness/">What is an agent harness?</a></li>
+          <li><a href="../../deepseek/#setup">Set up DeepSeek</a></li>
+          <li><a href="../../linux/#install">Install on Linux</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://github.com/lszl84/gritcode" rel="noopener">GitHub</a></li>
+          <li><a href="https://github.com/lszl84/gritcode/issues" rel="noopener">Report an issue</a></li>
+          <li><a href="https://youtube.com/@devmindscapetutorials" rel="noopener">YouTube</a></li>
+          <li><a href="../../sponsor/">Sponsor</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fine">
+      <span>© 2026 Luke · <a href="https://devmindscape.com" rel="noopener">DevMindscape</a> · Licensed under <a href="https://github.com/lszl84/gritcode/blob/main/LICENSE" rel="noopener">GPLv3</a></span>
+      <span>DeepSeek, Claude, Cursor and OpenCode are trademarks of their respective owners.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="thanks" role="status" hidden>
+  <button class="x" type="button" aria-label="Close">×</button>
+  <p><b>Thanks for downloading Gritcode!</b> It's free and built by one developer. If it saves you time, please consider sponsoring.</p>
+  <div class="cta-row">
+    <a class="btn btn-sponsor btn-sm" href="https://github.com/sponsors/lszl84" rel="noopener">♥ GitHub Sponsors</a>
+    <a class="btn btn-patreon btn-sm" href="https://patreon.com/LukeDevMindscape" rel="noopener">Patreon</a>
+  </div>
+</div>
+<script src="../../assets/site.js?v=3" defer></script>
+</body>
+</html>

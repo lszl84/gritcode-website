@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DeepSeek Desktop App for Coding (Mac &amp; Linux) — Gritcode</title>
+<meta name="description" content="A free, native DeepSeek desktop app for coding on Mac and Linux. A full DeepSeek V4 agent with a GUI, code editor and one-click run, not a chat wrapper.">
+<link rel="canonical" href="https://gritcode.ai/deepseek/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="The DeepSeek desktop app built for coding — Gritcode">
+<meta property="og:description" content="Turn DeepSeek V4 into a full desktop coding agent on Mac and Linux. Free, open source, native.">
+<meta property="og:url" content="https://gritcode.ai/deepseek/">
+<meta name="theme-color" content="#0a0b0d">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
+<meta property="og:site_name" content="Gritcode">
+<meta property="og:image" content="https://gritcode.ai/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://gritcode.ai/assets/og.png">
+<link rel="stylesheet" href="../assets/site.css?v=2">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"Gritcode","item":"https://gritcode.ai/"},
+  {"@type":"ListItem","position":2,"name":"DeepSeek desktop app","item":"https://gritcode.ai/deepseek/"}]},
+ {"@type":"VideoObject","name":"DeepSeek V4 building and launching an app in Gritcode","description":"Gritcode, a native DeepSeek desktop app for coding, sets up a Python project with DeepSeek V4 Pro and launches it with the one-click Play button.","thumbnailUrl":"https://gritcode.ai/media/play-button.webp","contentUrl":"https://gritcode.ai/media/play-button.mp4","uploadDate":"2026-09-14","duration":"PT14S"},
+ {"@type":"FAQPage","mainEntity":[
+  {"@type":"Question","name":"Is there an official DeepSeek desktop app for coding?","acceptedAnswer":{"@type":"Answer","text":"DeepSeek offers a web chat, mobile apps, the API, and DeepSeek Harness, a developer preview that runs as a local web app in your browser. Gritcode is an independent, open-source native desktop app built for coding with DeepSeek."}},
+  {"@type":"Question","name":"Is there a DeepSeek desktop app for Mac?","acceptedAnswer":{"@type":"Answer","text":"Yes. Gritcode runs on macOS 14 or later on Apple Silicon as a signed .dmg, and connects to DeepSeek V4 Pro and V4.1 Flash with your API key."}},
+  {"@type":"Question","name":"Is there a DeepSeek desktop app for Linux?","acceptedAnswer":{"@type":"Answer","text":"Yes. Gritcode ships a .deb for Ubuntu 24.04 or later and recent Debian, and builds from source on other distributions."}},
+  {"@type":"Question","name":"Does Gritcode charge extra for DeepSeek?","acceptedAnswer":{"@type":"Answer","text":"No. You use your own DeepSeek API key and pay DeepSeek directly. Gritcode is free and adds no markup."}},
+  {"@type":"Question","name":"Should I use DeepSeek V4 Pro or V4.1 Flash?","acceptedAnswer":{"@type":"Answer","text":"Use V4.1 Flash, the latest DeepSeek V4 Flash, for fast and cheap everyday edits and scaffolding. Use V4 Pro for hard refactors, debugging and long multi-step agent runs."}},
+  {"@type":"Question","name":"Can I use Gritcode without a DeepSeek API key?","acceptedAnswer":{"@type":"Answer","text":"Yes. The default OpenCode Free model runs on the free OpenCode Zen tier with no key and no sign-up."}}
+ ]}
+]}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="../" aria-label="Gritcode home"><img src="../assets/favicon.svg" alt="" width="28" height="28"><span>Gritcode</span></a>
+    <nav class="links" aria-label="Main">
+      <a href="../features/">Features</a>
+      <a href="../compare/">Compare</a>
+      <a href="../deepseek/" aria-current="page">DeepSeek</a>
+      <a href="../linux/">Linux</a>
+      <a href="https://github.com/lszl84/gritcode" rel="noopener">GitHub</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-sponsor btn-sm" href="../sponsor/"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21s-7.5-4.6-10-9.3C.4 8.5 2.3 4.5 6.2 4.5c2.2 0 3.8 1.2 5.8 3.4 2-2.2 3.6-3.4 5.8-3.4 3.9 0 5.8 4 4.2 7.2C19.5 16.4 12 21 12 21z"/></svg>Sponsor</a>
+      <a class="btn btn-primary btn-sm" href="../#download">Download</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="page-hero">
+  <div class="wrap">
+    <div class="crumbs"><a href="../">Gritcode</a> / DeepSeek desktop app</div>
+    <span class="eyebrow">DeepSeek desktop app</span>
+    <h1>The DeepSeek desktop app built for coding</h1>
+    <p class="lead">Gritcode is a free, open-source <strong>DeepSeek GUI for macOS and Linux</strong>. It turns DeepSeek V4 Pro and V4.1 Flash into a full coding agent that runs your shell, edits files, searches the web and launches your app. It's a native app and a 3.5&nbsp;MB download.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary btn-lg" data-asset="dmg" href="https://github.com/lszl84/gritcode/releases/latest">Download for macOS</a>
+      <a class="btn btn-ghost btn-lg" data-asset="deb" href="https://github.com/lszl84/gritcode/releases/latest">Linux .deb</a>
+      <a class="btn btn-ghost btn-lg" href="https://platform.deepseek.com/" rel="noopener">Get a DeepSeek API key</a>
+    </div>
+  </div>
+</section>
+
+<section class="section tight" style="border-top:0">
+  <div class="wrap">
+    <figure>
+      <div class="shot">
+        <video data-autoplay muted loop playsinline preload="none" poster="../media/play-button.webp" width="1600" height="900" aria-label="DeepSeek V4 Pro sets up a Python app in Gritcode, then the Play button launches it">
+          <source src="../media/play-button.mp4" type="video/mp4">
+        </video>
+      </div>
+      <figcaption>DeepSeek V4 Pro sets up a wxPython photo editor in Gritcode, and ▶&nbsp;Play launches it.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap prose">
+    <h2 id="not-a-wrapper">Not another DeepSeek chat wrapper</h2>
+    <p>Search for a "DeepSeek desktop app" and you'll mostly find wrappers: an Electron window around the DeepSeek web chat. They're fine for chatting, but they can't see your project, run a command or edit a file.</p>
+    <p>DeepSeek's own options are the web chat, the mobile apps, the API, and <a href="../compare/deepseek-harness/">DeepSeek Harness</a>, a developer preview that runs as a local web app in your browser. Gritcode fills the gap with a real desktop app for <strong>coding</strong> with DeepSeek:</p>
+    <ul>
+      <li><strong>A real agent.</strong> DeepSeek plans, runs bash, reads, writes and edits files, greps your code and searches the web, in a loop until the job is done.</li>
+      <li><strong>Built-in editor.</strong> A file tree and a syntax-highlighted editor sit beside the chat, so you can review what DeepSeek wrote.</li>
+      <li><strong>▶ Play button.</strong> Once the agent has your project running, one click builds and runs it with no tokens spent.</li>
+      <li><strong>Sessions and memory.</strong> Every project keeps its history, and DeepSeek can search your past work across projects.</li>
+      <li><strong>Native and tiny.</strong> The app takes 10.5&nbsp;MB on disk and 58&nbsp;MB of RAM at rest. There's no Electron and no browser tab.</li>
+    </ul>
+
+    <h2 id="setup">Set up DeepSeek in 2 minutes</h2>
+    <ol class="steps">
+      <li><strong>Download and open Gritcode.</strong> It works right away on the free OpenCode model, so you can try it before adding a key.</li>
+      <li><strong>Create an API key</strong> at <a href="https://platform.deepseek.com/" rel="noopener">platform.deepseek.com</a> and add some credit.</li>
+      <li><strong>Click the <img class="ico-inline" src="../assets/gear.svg" alt="gear icon"> gear button</strong> in Gritcode's bottom toolbar to open Settings, and paste the key. It's saved in your OS keyring, not in a text file.</li>
+      <li><strong>Pick DeepSeek V4 Pro or V4.1 Flash</strong> from the Model menu, choose a project folder, and start prompting.</li>
+    </ol>
+
+    <h2 id="options">DeepSeek GUI options compared</h2>
+    <p>There are four common ways to code with DeepSeek today. Here's how they differ.</p>
+    <div class="table-wrap wide">
+      <table>
+        <thead><tr><th scope="col"></th><th scope="col" class="me">Gritcode</th><th scope="col">Chat wrappers</th><th scope="col">DeepSeek Harness</th><th scope="col">Claude Code + DeepSeek</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Interface</th><td class="me">Native desktop app</td><td>Electron window around the web chat</td><td>Local web app in your browser</td><td>Terminal</td></tr>
+          <tr><th scope="row">Edits code, runs commands</th><td class="me"><span class="yes">Yes</span></td><td><span class="no">No</span></td><td><span class="yes">Yes</span></td><td><span class="yes">Yes</span></td></tr>
+          <tr><th scope="row">Editor and file tree</th><td class="me"><span class="yes">Yes</span></td><td><span class="no">No</span></td><td>—</td><td><span class="no">No</span></td></tr>
+          <tr><th scope="row">Setup</th><td class="me">Download, paste your key</td><td>Download</td><td><code>npx @deepseek-ai/dsh web</code> (Node.js)</td><td>npm install plus 9 environment variables</td></tr>
+          <tr><th scope="row">Status</th><td class="me">Stable releases</td><td>Varies</td><td>Developer preview</td><td>Documented by DeepSeek</td></tr>
+          <tr><th scope="row">Free option, no key</th><td class="me"><span class="yes">Yes</span>, OpenCode Free</td><td>Varies</td><td><span class="no">No</span></td><td><span class="no">No</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Prefer the terminal? Read our <a href="../claude-code-deepseek/">guide to running Claude Code with DeepSeek V4</a>.</p>
+
+    <h2 id="why">Why DeepSeek for agentic coding?</h2>
+    <p>Agents burn tokens. Every tool call and file read goes back to the model, so the price per token matters far more than in a simple chat. DeepSeek V4 offers strong coding ability and a context window of roughly a million tokens at prices that make all-day agent use affordable.</p>
+    <p>Gritcode is built around that:</p>
+    <ul>
+      <li><strong>Context management tuned for DeepSeek.</strong> It compacts only near the context limit, keeps a budgeted tail of recent turns, and strips reasoning tokens from outgoing requests.</li>
+      <li><strong>Live model discovery.</strong> Gritcode reads DeepSeek's model list, so new versions show up immediately.</li>
+      <li><strong>Vision.</strong> Screenshots you drop in are sent to a DeepSeek vision model so the agent can see your UI.</li>
+      <li><strong>No middleman.</strong> Requests go straight from your machine to DeepSeek, with no proxy and no markup.</li>
+    </ul>
+
+    <h2 id="pro-vs-flash">DeepSeek V4 Pro vs V4.1 Flash</h2>
+    <p>V4.1 Flash is the latest version of DeepSeek V4 Flash. Both models appear in Gritcode's Model menu as soon as your key is set.</p>
+    <div class="grid">
+      <div class="card">
+        <span class="tag blue">V4.1 Flash</span>
+        <h3>Fast and cheapest</h3>
+        <p>Everyday edits, scaffolding a new app, quick questions, small bug fixes.</p>
+      </div>
+      <div class="card hl">
+        <span class="tag">V4 Pro</span>
+        <h3>Strongest reasoning</h3>
+        <p>Hard refactors, tricky debugging, long multi-step agent runs across a large codebase.</p>
+      </div>
+    </div>
+
+    <h2 id="faq">FAQ</h2>
+    <h3>Is there an official DeepSeek desktop app for coding?</h3>
+    <p>DeepSeek offers a web chat, mobile apps, the API, and DeepSeek Harness, a developer preview that runs as a local web app in your browser. Gritcode is an independent, open-source native desktop app built for coding with DeepSeek.</p>
+    <h3>Is there a DeepSeek desktop app for Mac?</h3>
+    <p>Yes. Gritcode runs on macOS 14 or later on Apple Silicon as a signed .dmg, and connects to DeepSeek V4 Pro and V4.1 Flash with your API key.</p>
+    <h3>Is there a DeepSeek desktop app for Linux?</h3>
+    <p>Yes. Gritcode ships a .deb for Ubuntu 24.04 or later and recent Debian, and builds from source on other distributions. See <a href="../linux/">Gritcode for Linux</a>.</p>
+    <h3>What about Windows?</h3>
+    <p>Gritcode currently ships for macOS and Linux.</p>
+    <h3>Does Gritcode charge extra for DeepSeek?</h3>
+    <p>No. You use your own DeepSeek API key and pay DeepSeek directly. Gritcode is free and adds no markup.</p>
+    <h3>Should I use DeepSeek V4 Pro or V4.1 Flash?</h3>
+    <p>Use V4.1 Flash, the latest DeepSeek V4 Flash, for fast and cheap everyday edits and scaffolding. Use V4 Pro for hard refactors, debugging and long multi-step agent runs.</p>
+    <h3>Can I use Gritcode without a DeepSeek API key?</h3>
+    <p>Yes. The default OpenCode Free model runs on the free OpenCode Zen tier with no key and no sign-up.</p>
+    <h3>Is Gritcode an official DeepSeek app?</h3>
+    <p>No. Gritcode is an independent open-source project that uses DeepSeek's public API.</p>
+  </div>
+</section>
+
+<section class="section tight">
+  <div class="wrap">
+    <div class="cta-band">
+      <div>
+        <h2>Put DeepSeek V4 to work.</h2>
+        <p>Free, open source, 3.5&nbsp;MB. Built by one developer and funded by sponsors.</p>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="../#download">Download Gritcode</a>
+        <a class="btn btn-sponsor" href="../sponsor/">♥ Sponsor</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="../"><img src="../assets/favicon.svg" alt="" width="28" height="28"><span>Gritcode</span></a>
+        <p>Gritcode is a native, open-source AI coding agent and agent harness for DeepSeek V4, for macOS and Linux.</p>
+        <div class="cta-row">
+          <a class="btn btn-sponsor btn-sm" href="https://github.com/sponsors/lszl84" rel="noopener">♥ GitHub Sponsors</a>
+          <a class="btn btn-ghost btn-sm" href="https://patreon.com/LukeDevMindscape" rel="noopener">Patreon</a>
+        </div>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="../features/">Features</a></li>
+          <li><a href="../#download">Download</a></li>
+          <li><a href="../deepseek/">DeepSeek desktop app</a></li>
+          <li><a href="../linux/">Gritcode for Linux</a></li>
+          <li><a href="https://github.com/lszl84/gritcode/releases" rel="noopener">Changelog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Compare</h4>
+        <ul>
+          <li><a href="../compare/claude-code/">vs Claude Code</a></li>
+          <li><a href="../compare/cursor/">vs Cursor</a></li>
+          <li><a href="../compare/opencode/">vs OpenCode</a></li>
+          <li><a href="../compare/deepseek-harness/">vs DeepSeek Harness</a></li>
+          <li><a href="../compare/">All comparisons</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Guides</h4>
+        <ul>
+          <li><a href="../claude-code-deepseek/">Claude Code with DeepSeek</a></li>
+          <li><a href="../agent-harness/">What is an agent harness?</a></li>
+          <li><a href="../deepseek/#setup">Set up DeepSeek</a></li>
+          <li><a href="../linux/#install">Install on Linux</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Community</h4>
+        <ul>
+          <li><a href="https://github.com/lszl84/gritcode" rel="noopener">GitHub</a></li>
+          <li><a href="https://github.com/lszl84/gritcode/issues" rel="noopener">Report an issue</a></li>
+          <li><a href="https://youtube.com/@devmindscapetutorials" rel="noopener">YouTube</a></li>
+          <li><a href="../sponsor/">Sponsor</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fine">
+      <span>© 2026 Luke · <a href="https://devmindscape.com" rel="noopener">DevMindscape</a> · Licensed under <a href="https://github.com/lszl84/gritcode/blob/main/LICENSE" rel="noopener">GPLv3</a></span>
+      <span>DeepSeek, Claude, Cursor and OpenCode are trademarks of their respective owners.</span>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="thanks" role="status" hidden>
+  <button class="x" type="button" aria-label="Close">×</button>
+  <p><b>Thanks for downloading Gritcode!</b> It's free and built by one developer. If it saves you time, please consider sponsoring.</p>
+  <div class="cta-row">
+    <a class="btn btn-sponsor btn-sm" href="https://github.com/sponsors/lszl84" rel="noopener">♥ GitHub Sponsors</a>
+    <a class="btn btn-patreon btn-sm" href="https://patreon.com/LukeDevMindscape" rel="noopener">Patreon</a>
+  </div>
+</div>
+<script src="../assets/site.js?v=3" defer></script>
+</body>
+</html>
